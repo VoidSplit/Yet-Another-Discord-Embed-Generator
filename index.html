@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="embed">
-                <div class="colored_line"></div>
+                <div class="colored_line" id="preview_color"></div>
                 <div class="inner">
                     <div class="thumbnail">
                         <div class="wrapper">
@@ -68,12 +68,12 @@
                         </div>
                         <div class="img_element">
                             <div class="wrapper">
-                                <img src="resources/images/default profile picture.png" alt="">
+                                <img src="resources/images/default profile picture.png" alt="" id="image">
                             </div>
                         </div>
                         <div class="footer">
                             <div class="img">
-                                <img src="resources/images/default profile picture.png" alt="">
+                                <img src="resources/images/default profile picture.png" alt="" id="footer_icon">
                                 
                             </div>
                             <p class="text"><span id="preview_footer_text">Some footer text here</span></p>
@@ -84,6 +84,7 @@
                 </div>
             </div>
         </div>
+        <button id="test_button">Test</button>
     </div>
     <form action="#">
         <h1>Setup your custom embed.</h1>
@@ -129,8 +130,10 @@
 
         <div class="separator"></div>
 
-        <label for="input_image_video_url">Image/video url</label>
-        <input type="text" placeholder="https://my-super-website/content.mp4" id="input_image_video_url">
+        <label for="input_image_url">Image url</label>
+        <input type="text" placeholder="https://my-super-website/content.mp4" id="input_image_url">
+        <label for="input_video_url">Video url</label>
+        <input type="text" placeholder="https://my-super-website/content.mp4" id="input_video_url">
 
         <div class="separator"></div>
 
