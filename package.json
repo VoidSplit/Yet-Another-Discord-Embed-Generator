@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "esbuild": "^0.14.51",
+    "esbuild-plugin-import-glob": "^0.1.1"
+  },
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outfile=dist/main.js"
+  }
+}
