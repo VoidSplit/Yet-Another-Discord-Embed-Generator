@@ -89,26 +89,64 @@
         <h1>Setup your custom embed.</h1>
         <p>Customize your embed from A to Z and export it in the language you want!</p>
         
-        <input type="text" placeholder="Title" id="title_input">
-        <input type="text" placeholder="Description">
-        <input type="text" placeholder="Title Url">
-        <div class="timestamp">
-            <div class="left">
-                
-                <span>Timestamp</span>
-                <input type="date" name="" id="">
-            </div>
-            <div class="right">
-                
-                <span>Auto</span>
-                <div class="input">
+        
+        <label for="author_name">Author name</label>
+        <input type="text" placeholder="Some name" id="author_name">
+        <label for="author_url">Author url</label>
+        <input type="text" placeholder="https://my-super-website.com/profile/" id="author_url">
+        <label for="author_icon_url">Author icon url</label>
+        <input type="text" placeholder="https://my-super-website.com/profile-picture.png" id="author_icon_url">
 
+        <div class="separator"></div>
+
+        <label for="color_input">Color</label>
+        <input type="color" name="" id="">
+        <label for="title_input">Title</label>
+        <input type="text" placeholder="Some title" id="title_input">
+        <label for="description">Description</label>
+        <input type="text" placeholder="Some description here" id="description">
+        <label for="titleURL">Title Url</label>
+        <input type="text" placeholder="https://my-super-website.com/" id="titleURL">
+        <label for="thumbnail">Thumbnail url</label>
+        <input type="text" placeholder="https://my-super-website/thumbnail.png" id="thumbnail">
+
+        <div class="separator"></div>
+
+        <label>Fields</label>
+        <div id="fields_wrapper">
+            <div class="field_line">
+                <input type="text" placeholder="name">
+                <input type="text" placeholder="value">
+                <div class="checkbox">
                     <input type="checkbox" name="" id="">
+                    <label>Inline</label>
                 </div>
+                <button class="btn red">Delete</button>
             </div>
         </div>
-        <input type="color">
-        <input type="text" placeholder="Description">
+        <button class="btn green">
+            Add field
+        </button>
+
+        <div class="separator"></div>
+
+        <label for="image_video_url">Image/video url</label>
+        <input type="text" placeholder="https://my-super-website/content.mp4" id="image_video_url">
+
+        <div class="separator"></div>
+
+        <label for="footer_icon_url">Footer icon url</label>
+        <input type="text" placeholder="https://my-super-website/footer-icon.png" id="footer_icon_url">
+        <label for="footer_text">Footer text</label>
+        <input type="text" placeholder="Some footer text here" id="footer_text">
+        
+        <div class="timestamp">
+            <input type="date" name="" id="">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="">
+                <label>Auto</label>
+            </div>
+        </div>
     </form>
 </body>
 </html>

@@ -207,10 +207,12 @@ body {
 }
 
 form {
-    background-color: #1a1b1e;
+    background-color: #36393F;
     width: 50vw;
     height: 100vh;
-    padding: 30px 25px 25px
+    padding: 30px 25px 25px;
+    max-height: 100vh;
+    overflow: auto;
 }
 form h1 {
     color: #fff;
@@ -224,77 +226,84 @@ form input {
     position: relative;
     display: block;
     padding: 8px 10px;
-    border-radius: 5px;
+    border-radius: 3px;
     width: 100%;
-    background-color: transparent;
+    background-color: #202225;
     border: none;
-    outline: 2px solid #fff;
     color: #fff;
     margin-bottom: 18px;
+    margin-top: 5px;
+}
+form label {
+    color: #838688;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 form input::placeholder {
     color: rgb(182, 182, 182);
 }
 form input:focus {
-    outline-color: #5865f2;
+    outline: 2px solid #5865f2;
 }
-form input[type="color"]::after {
-    background-color: #1a1b1e;
-    content: "Color";
+.separator {
+    background-color: #72767d;
+    height: 3px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+form .field_line {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+form .field_line input {
+    margin-bottom: 0;
+}
+form .field_line .checkbox {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(182, 182, 182);
-    position: absolute;
-    width: 10%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
+    gap: 10px
 }
-form .timestamp {
-    background-color: #fff;
-    color: #111;
-    display: flex;
-    gap: 30px;
-    padding: 10px 25px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+form .field_line .checkbox label {
+    line-height: 0px;
 }
-form .timestamp .left {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 50%;
-    gap: 5px
+.btn {
+    border: none;
+    border-radius: 3px;
+    padding: 8px 10px;
+    color: #fff;
 }
-
-form .timestamp .right {
+.btn.red {
+    background-color: #F04747;
+}
+.btn.green {
+    background-color: #43B581;
+}
+#fields_wrapper {
     display: flex;
     flex-direction: column;
-    height: auto;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.timestamp {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 5px
+    gap: 20px;
 }
-form .timestamp .right input {
-    outline: none;
+.timestamp input {
     margin-bottom: 0;
 }
-form .timestamp .left input {
-    margin-bottom: 0;
+.timestamp .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-form .timestamp .right .input {
-display: flex;
-align-items: center;
-justify-content: center;
-height: 100%;
+.timestamp .checkbox label {
+    margin-top: 5px;
 }
-form .timestamp .left input,
-form .timestamp .left input::placeholder {
-    color: #1a1b1e;
-} 
-
-form .timestamp input[type="date"] {
-    outline-color: #1a1b1e;
+::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
 }
