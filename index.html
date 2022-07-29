@@ -38,13 +38,13 @@
                             <div class="img">
                                 <img src="resources/images/default profile picture.png" alt="" srcset="">
                             </div>
-                            <p class="name">Some name</p>
+                            <p class="name"><span id="preview_author_name">Some name</span></p>
                         </div>
                         <div class="title clickable">
-                            Some title
+                            <span id="preview_title">Some title</span>
                         </div>
                         <div class="description">
-                            Some description here
+                            <span id="preview_description">Some description here</span>
                         </div>
                         <div class="field_zone">
                             <div class="field">
@@ -76,9 +76,9 @@
                                 <img src="resources/images/default profile picture.png" alt="">
                                 
                             </div>
-                            <p class="text">Some footer text here</p>
+                            <p class="text"><span id="preview_footer_text">Some footer text here</span></p>
                             <span class="decoration"></span>
-                            <div class="timestamp">01/01/2022</div>
+                            <div class="timestamp"><span id="timestamp">01/01/2022</span></div>
                         </div>
                     </div>
                 </div>
@@ -89,26 +89,25 @@
         <h1>Setup your custom embed.</h1>
         <p>Customize your embed from A to Z and export it in the language you want!</p>
         
-        
-        <label for="author_name">Author name</label>
-        <input type="text" placeholder="Some name" id="author_name">
-        <label for="author_url">Author url</label>
-        <input type="text" placeholder="https://my-super-website.com/profile/" id="author_url">
-        <label for="author_icon_url">Author icon url</label>
-        <input type="text" placeholder="https://my-super-website.com/profile-picture.png" id="author_icon_url">
+        <label for="input_author_name">Author name</label>
+        <input type="text" placeholder="Some name" id="input_author_name">
+        <label for="input_author_url">Author url</label>
+        <input type="text" placeholder="https://my-super-website.com/profile/" id="input_author_url">
+        <label for="input_author_icon_url">Author icon url</label>
+        <input type="text" placeholder="https://my-super-website.com/profile-picture.png" id="input_author_icon_url">
 
         <div class="separator"></div>
 
-        <label for="color_input">Color</label>
-        <input type="color" id="color_input">
-        <label for="title_input">Title</label>
-        <input type="text" placeholder="Some title" id="title_input">
-        <label for="description">Description</label>
-        <input type="text" placeholder="Some description here" id="description">
-        <label for="titleURL">Title Url</label>
-        <input type="text" placeholder="https://my-super-website.com/" id="titleURL">
-        <label for="thumbnail">Thumbnail url</label>
-        <input type="text" placeholder="https://my-super-website/thumbnail.png" id="thumbnail">
+        <label for="input_color">Color</label>
+        <input type="color" id="input_color">
+        <label for="input_title">Title</label>
+        <input type="text" placeholder="Some title" id="input_title">
+        <label for="input_description">Description</label>
+        <input type="text" placeholder="Some description here" id="input_description">
+        <label for="input_url">Title Url</label>
+        <input type="text" placeholder="https://my-super-website.com/" id="input_url">
+        <label for="input_thumbnail_url">Thumbnail url</label>
+        <input type="text" placeholder="https://my-super-website/thumbnail.png" id="input_thumbnail_url">
 
         <div class="separator"></div>
 
@@ -130,20 +129,20 @@
 
         <div class="separator"></div>
 
-        <label for="image_video_url">Image/video url</label>
-        <input type="text" placeholder="https://my-super-website/content.mp4" id="image_video_url">
+        <label for="input_image_video_url">Image/video url</label>
+        <input type="text" placeholder="https://my-super-website/content.mp4" id="input_image_video_url">
 
         <div class="separator"></div>
 
-        <label for="footer_icon_url">Footer icon url</label>
-        <input type="text" placeholder="https://my-super-website/footer-icon.png" id="footer_icon_url">
-        <label for="footer_text">Footer text</label>
-        <input type="text" placeholder="Some footer text here" id="footer_text">
+        <label for="input_footer_icon_url">Footer icon url</label>
+        <input type="text" placeholder="https://my-super-website/footer-icon.png" id="input_footer_icon_url">
+        <label for="input_footer_text">Footer text</label>
+        <input type="text" placeholder="Some footer text here" id="input_footer_text">
         
         <div class="timestamp">
-            <input type="date" name="" id="">
+            <input type="date" name="" id="input_timestamp">
             <div class="checkbox">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="input_timestamp_auto">
                 <label>Auto</label>
             </div>
         </div>
