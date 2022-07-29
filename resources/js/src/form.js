@@ -1,0 +1,65 @@
+import { Embed } from './data/embed'
+
+import { Author } from './data/author'
+import { Footer } from './data/footer'
+import { Image } from './data/image'
+import { Provider } from './data/provider'
+import { Thumbnail } from './data/thumbnail'
+import { Video } from './data/video'
+
+function get(id) {
+    let element = document.getElementById(`input_${id}`)
+    if (element) {
+        return element.value
+    } else {
+        return null
+    }
+}
+
+function getEmbed() {
+    return new Embed(
+        get("title"),
+        get("type"),
+        get("description"),
+        get("url"),
+        get("timestamp"),
+        get("color"),
+        new Footer(
+            get("footer_text"),
+            get("footer_icon_url"),
+            get("footer_proxy_icon_url"),
+        ),
+        new Image(
+            get("image_url"),
+            get("image_proxy_url"),
+            get("image_height"),
+            get("image_width"),
+        ),
+        new Thumbnail(
+            get("thumbnail_url"),
+            get("thumbnail_proxy_url"),
+            get("thumbnail_height"),
+            get("thumbnail_width"),
+        ),
+        new Video(
+            get("video_url"),
+            get("video_proxy_url"),
+            get("video_height"),
+            get("video_width"),
+        ),
+        new Provider(
+            get("provider_name"),
+            get("provider_url"),
+        ),
+        new Author(
+            get("author_name"),
+            get("author_url"),
+            get("author_icon_url"),
+            get("author_proxy_icon_url"),
+        )
+    )
+}
+
+export default {
+    getEmbed: getEmbed
+}
