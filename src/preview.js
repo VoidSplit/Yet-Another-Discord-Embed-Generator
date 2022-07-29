@@ -39,6 +39,7 @@ function preview(embed) {
     setLineColor("color", embed.color || "#ffa600")
 
     putText("footer_text", embed.footer.text || "Some footer text")
+    setImgSrc("footer_icon", embed.footer.icon_url || "resources/images/default profile picture.png")
 
     setImgSrc("image", embed.image.url || "resources/images/default profile picture.png")
 
