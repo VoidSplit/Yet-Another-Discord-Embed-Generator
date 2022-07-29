@@ -1,6 +1,8 @@
 import form from './form.js'
+import preview from './preview.js'
 
 document.getElementById("test_button").addEventListener("click", (e) => {
-    console.log("Test")
-    console.log(form.getEmbed())
+    const embed = form.getEmbed()
+    console.log(embed)
+    preview.preview(embed)
 })
