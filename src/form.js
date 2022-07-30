@@ -6,14 +6,33 @@ import { Image } from './data/image'
 import { Provider } from './data/provider'
 import { Thumbnail } from './data/thumbnail'
 import { Video } from './data/video'
+import { Field } from './data/field'
 
-function get(id) {
-    let element = document.getElementById(`input_${id}`)
+function getElement(id, parent=document) {
+    console.log(id)
+    let element = parent.querySelector(`#input_${id}`)
+    return element
+}
+
+function get(id, parent=document) {
+    let element = getElement(id, parent=document)
     if (element) {
         return element.value
-    } else {
-        return null
     }
+    return null
+}
+
+function getFields() {
+    let fields = []
+    const children = document.getElementById("fields_wrapper").children
+    for (let i = 0; i < children.length; i++) {
+        fields.push(new Field(
+            get("name", children[i]),
+            get("value", children[i]),
+            getElement("inline", children[i]).checked,
+        ))
+    }
+    return fields
 }
 
 function getEmbed() {
@@ -56,7 +75,8 @@ function getEmbed() {
             get("author_url"),
             get("author_icon_url"),
             get("author_proxy_icon_url"),
-        )
+        ),
+        getFields(),
     )
 }
 

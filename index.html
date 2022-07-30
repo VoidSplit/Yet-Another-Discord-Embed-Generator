@@ -46,24 +46,26 @@
                         <div class="description">
                             <span id="preview_description">Some description here</span>
                         </div>
-                        <div class="field_zone">
-                            <div class="field">
-                                <div class="field_name">Regular field title</div>
-                                <div class="field_value">Some value here</div>
+                        <div id="fields">
+                            <div class="field_zone">
+                                <div class="field">
+                                    <div class="field_name">Regular field title</div>
+                                    <div class="field_value">Some value here</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="field_zone">
-                            <div class="field">
-                                <div class="field_name">Inline field title</div>
-                                <div class="field_value">Some value here</div>
-                            </div>
-                            <div class="field">
-                                <div class="field_name">Inline field title</div>
-                                <div class="field_value">Some value here</div>
-                            </div>
-                            <div class="field">
-                                <div class="field_name">Inline field title</div>
-                                <div class="field_value">Some value here</div>
+                            <div class="field_zone">
+                                <div class="field">
+                                    <div class="field_name">Inline field title</div>
+                                    <div class="field_value">Some value here</div>
+                                </div>
+                                <div class="field">
+                                    <div class="field_name">Inline field title</div>
+                                    <div class="field_value">Some value here</div>
+                                </div>
+                                <div class="field">
+                                    <div class="field_name">Inline field title</div>
+                                    <div class="field_value">Some value here</div>
+                                </div>
                             </div>
                         </div>
                         <div class="img_element">
@@ -112,18 +114,8 @@
         <div class="separator"></div>
 
         <label>Fields</label>
-        <div id="fields_wrapper">
-            <div class="field_line">
-                <input type="text" placeholder="name">
-                <input type="text" placeholder="value">
-                <div class="checkbox">
-                    <input type="checkbox" name="" id="">
-                    <label>Inline</label>
-                </div>
-                <button class="btn red">Delete</button>
-            </div>
-        </div>
-        <button class="btn green">
+        <div id="fields_wrapper"></div>
+        <button class="btn green" onclick="addField()">
             Add field
         </button>
 

@@ -324,3 +324,6 @@ form .field_line .checkbox label {
         flex-direction: column;
     }
 }
+input[type="checkbox"] {
+    width: auto;
+}

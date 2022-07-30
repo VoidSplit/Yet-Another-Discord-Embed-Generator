@@ -4,7 +4,7 @@ export class Field {
         value,
         inline,
     ) {
-        this.name = name || nnull
+        this.name = name || null
         this.value = value || null
         this.inline = inline || null
     }
