@@ -1,7 +1,7 @@
 {%- macro params(params, del=", ") -%}
     {%- set params = params | selectattr("value") -%}
     {%- for param in params -%}
-        {{ param.name }}={{ param.value }}{{ del if not loop.last }}
+        {{ param.name }}={{ '"' if not param.no_quotes }}{{ param.value }}{{ '"' if not param.no_quotes }}{{ del if not loop.last }}
     {%- endfor -%}
 {%- endmacro -%}
 
@@ -28,7 +28,7 @@ embed = discord.Embed(
             {{- fun(".addField", [
                 { name: "name", value: field.name },
                 { name: "value", value: field.value },
-                { name: "inline", value: "True" if field.inline else "False" }
+                { name: "inline", value: "True" if field.inline else "False", no_quotes: true }
             ]) }}
         {% endif -%}
     {%- endfor %}
