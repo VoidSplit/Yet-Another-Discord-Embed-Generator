@@ -285,7 +285,7 @@ form .field_line .checkbox label {
 .btn.green {
     background-color: #43B581;
 }
-#fields_wrapper {
+#fields {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -323,4 +323,7 @@ form .field_line .checkbox label {
     body {
         flex-direction: column;
     }
+}
+input[type="checkbox"] {
+    width: auto;
 }
