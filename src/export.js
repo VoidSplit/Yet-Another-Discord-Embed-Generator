@@ -1,7 +1,7 @@
-import python_template from './export/python.njs'
+import * as templates from './export/templates.js'
 import nunjucks from 'nunjucks'
 
-function python(embed) {
+export function export_(language, embed) {
     const env = nunjucks.configure({
         autoescape: false,
         trimBlocks: true,
@@ -10,13 +10,9 @@ function python(embed) {
 
     env.addFilter("join_array", (arr, del1, del2) => {
         arr = arr.map(x => Object.values(x))
-        arr = arr.map(x => x.join(del2))
-        return arr.join(del1)
+        arr = arr.map(x => x.join(del1))
+        return arr.join(del2)
     })
 
-    return env.renderString(python_template, embed)
-}
-
-export default {
-    python: python
+    return env.renderString(templates[language], embed)
 }
