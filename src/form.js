@@ -9,7 +9,6 @@ import { Video } from './data/video'
 import { Field } from './data/field'
 
 function getElement(id, parent=document) {
-    console.log(id)
     let element = parent.querySelector(`#input_${id}`)
     return element
 }
