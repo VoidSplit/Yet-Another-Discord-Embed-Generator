@@ -406,7 +406,7 @@ input[type="checkbox"] {
 .select .categories .cat:hover {
     background-color: #72767d;
 }
-.select .disabled {
+.select .view {
     color: #949aa4;
 }
 

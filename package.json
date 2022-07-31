@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "custom-select": "^1.1.15",
     "esbuild": "^0.14.51",
     "esbuild-plugin-import-glob": "^0.1.1",
     "nunjucks": "^3.2.3"
