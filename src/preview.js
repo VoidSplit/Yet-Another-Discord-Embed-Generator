@@ -31,6 +31,34 @@ function setLineColor(id, value) {
     })
 }
 
+function previewFields(fields) {
+    document.getElementById("fields").innerHTML = ""
+    if (fields.length > 0) {
+        let zone = null
+        fields.forEach((field) => {
+            if (!zone || !field.inline) {
+                zone = document.createElement("div")
+                zone.classList.add("field_zone")
+            }
+            
+            let field_div = document.createElement("div")
+            field_div.classList.add("field")
+
+            field_div.innerHTML = `
+                <div class="field_name">${field.name}</div>
+                <div class="field_value">${field.value}</div>
+            `
+
+            zone.appendChild(field_div)
+            document.getElementById("fields").appendChild(zone)
+
+            if (!field.inline) {
+                zone = null
+            }
+        })
+    }
+}
+
 function preview(embed) {
     putText("title", embed.title || "Some title")
     putText("description", embed.description || "Some description")
@@ -47,6 +75,8 @@ function preview(embed) {
 
     putText("author_name", embed.author.name || "Some author name")
     setImgSrc("author_icon", embed.author.icon_url || "resources/images/default profile picture.png")
+
+    previewFields(embed.fields)
 }
 
 export default {
