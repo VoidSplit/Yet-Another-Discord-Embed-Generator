@@ -5,6 +5,9 @@ require('esbuild').build({
         'src/index.js',
     ],
     bundle: true,
+    loader: {
+        ".njs": "text"
+    },
     outfile: 'dist/app.js',
     plugins: [
         ImportGlobPlugin.default(),
