@@ -8,7 +8,7 @@
 {%- macro fun(func, parameters) -%}
 {%- if parameters | selectattr("value") | length %}
     {{ func }}({{ params(parameters) }})
-{% endif %}
+{% endif -%}
 {%- endmacro -%}
 
 {% set comma = joiner() %}
@@ -23,6 +23,7 @@ embed = discord.Embed(
     ) }}
 )
 {##}
+
     {%- for field in fields -%}
         {%- if field.name or field.value %}
             {{- fun(".addField", [
@@ -30,20 +31,24 @@ embed = discord.Embed(
                 { name: "value", value: field.value },
                 { name: "inline", value: "True" if field.inline else "False", no_quotes: true }
             ]) }}
-        {% endif -%}
+        {%- endif -%}
     {%- endfor %}
+
     {{- fun(".setAuthor", [
         { name: "name", value: author.name },
         { name: "url", value: author.url },
         { name: "icon_url", value: author.icon_url }
     ]) }}
+    
     {{- fun(".setFooter", [
         { name: "text", value: footer.text },
         { name: "icon_url", value: footer.icon_url }
     ]) }}
+
     {{- fun(".setImage", [
         { name: "url", value: image.url }
     ]) }}
+
     {{- fun(".setThumbnail", [
         { name: "url", value: thumbnail.url }
     ]) }}

@@ -8,7 +8,7 @@ document.getElementById("test_button").addEventListener("click", (e) => {
     const embed = form.getEmbed()
     console.log(embed)
     preview.preview(embed)
-    console.log(export_("javascript", embed))
+    console.log(export_("python", embed))
 })
 
 window.addField = form_ui.addField

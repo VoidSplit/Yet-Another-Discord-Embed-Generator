@@ -13,6 +13,7 @@
 
 const embed = new EmbedBuilder()
 {##}
+
     {%- if color %}
     .setColor("{{ color }}")
     {% endif %}
