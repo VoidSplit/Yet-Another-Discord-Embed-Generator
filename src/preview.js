@@ -59,7 +59,7 @@ function previewFields(fields) {
     }
 }
 
-function preview(embed) {
+export function preview(embed) {
     putText("title", embed.title || "Some title")
     putText("description", embed.description || "Some description")
     setLinkUrl("url", embed.url || "resources/images/default profile picture.png")
@@ -77,8 +77,4 @@ function preview(embed) {
     setImgSrc("author_icon", embed.author.icon_url || "resources/images/default profile picture.png")
 
     previewFields(embed.fields)
-}
-
-export default {
-    preview: preview
 }

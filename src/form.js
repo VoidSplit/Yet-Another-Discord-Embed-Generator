@@ -34,7 +34,7 @@ function getFields() {
     return fields
 }
 
-function getEmbed() {
+export function getEmbed() {
     return new Embed(
         get("title"),
         get("type"),
@@ -77,8 +77,4 @@ function getEmbed() {
         ),
         getFields(),
     )
-}
-
-export default {
-    getEmbed: getEmbed
 }

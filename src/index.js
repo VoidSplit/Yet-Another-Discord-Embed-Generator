@@ -1,6 +1,6 @@
-import form from './form.js'
-import preview from './preview.js'
-import form_ui from './ui/form.js'
+import * as form from './form.js'
+import * as preview from './preview.js'
+import * as form_ui from './ui/form.js'
 import * as select from './ui/select.js'
 import * as templates from './export/templates.js'
 
