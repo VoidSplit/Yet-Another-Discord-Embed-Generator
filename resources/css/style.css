@@ -135,11 +135,13 @@ body {
     font-weight: 600;
     font-size: 16px;
 }
-.title.clickable {
+.title a:link,
+.title a:visited {
     color: #00b0f4;
     cursor: pointer;
 }
-.title.clickable:hover {
+.title a:link:hover,
+.title a:visited:hover {
     text-decoration: underline;
 }
 .description {

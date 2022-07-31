@@ -15,7 +15,11 @@ function putText(id, value) {
 
 function setLinkUrl(id, value) {
     getElement(id, (element) => {
-        element.href = value
+        if (value) {
+            element.href = value
+        } else {
+            element.removeAttribute("href")
+        }
     })
 }
 
@@ -62,7 +66,7 @@ function previewFields(fields) {
 export function preview(embed) {
     putText("title", embed.title || "Some title")
     putText("description", embed.description || "Some description")
-    setLinkUrl("url", embed.url || "resources/images/default profile picture.png")
+    setLinkUrl("url", embed.url)
     putText("timestamp", embed.timestamp || "Some timestamp")
     setLineColor("color", embed.color || "#ffa600")
 
