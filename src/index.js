@@ -10,8 +10,14 @@ let syntaxes = {}
 Object.keys(templates).forEach((e) => {
     syntaxes[e] = e
 })
-
 select.populate(syntaxes)
+
+document.querySelectorAll("#embed_form input").forEach((element) => {
+    element.addEventListener("keyup", (event) => {
+        const embed = form.getEmbed()
+        preview.preview(embed)
+    })
+})
 
 window.exp = () => {
     const embed = form.getEmbed()
