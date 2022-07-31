@@ -14,7 +14,7 @@ function getElement(id, parent=document) {
 }
 
 function get(id, parent=document) {
-    let element = getElement(id, parent=document)
+    let element = getElement(id, parent)
     if (element) {
         return element.value
     }
