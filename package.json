@@ -10,7 +10,7 @@
     "sass": "^1.54.0"
   },
   "scripts": {
-    "html": "nunjucks -p src/html/ -o site/ index.html",
+    "html": "nunjucks -p src/html/ -o site/ index.njk",
     "css": "sass --style compressed src/css/index.scss site/dist/css/style.css",
     "resources": "cpy --cwd src resources/ ../site/",
     "js": "node esbuild.js",

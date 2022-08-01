@@ -1,5 +1,5 @@
 import nunjucks from 'nunjucks'
-const templates = require('./templates/export/*.njs')
+const templates = require('./templates/export/*.njk')
 
 export function getSyntaxes() {
     let contents = templates.default
@@ -7,7 +7,7 @@ export function getSyntaxes() {
     let syntaxes = {}
 
     for (let i = 0; i < contents.length; i++) {
-        const lang = filenames[i].match(/\.\/templates\/export\/(.*).njs/)[1]
+        const lang = filenames[i].match(/\.\/templates\/export\/(.*)\.njk/)[1]
         syntaxes[lang] = contents[i].default
     }
 

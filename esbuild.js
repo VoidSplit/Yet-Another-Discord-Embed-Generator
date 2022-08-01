@@ -6,7 +6,7 @@ require('esbuild').build({
     ],
     bundle: true,
     loader: {
-        ".njs": "text"
+        ".njk": "text"
     },
     outfile: 'site/dist/js/app.js',
     plugins: [

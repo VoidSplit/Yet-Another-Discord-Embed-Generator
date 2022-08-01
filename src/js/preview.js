@@ -1,4 +1,4 @@
-import template from './templates/preview.njs'
+import template from './templates/preview.njk'
 import nunjucks from 'nunjucks'
 
 export function preview(embed) {
