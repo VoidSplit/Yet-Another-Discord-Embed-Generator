@@ -2,11 +2,15 @@ EmbedBuilder embed = new EmbedBuilder()
 {##}
 
     {%- if title %}
-    .setTitle("{{ title }}", null)
+    .setTitle("{{ title }}")
     {% endif %}
 
     {%- if description %}
     .setDescription("{{ description }}")
+    {% endif %}
+
+    {%- if author.name or author.icon_url %}
+    .setAuthor("{{ author.name }}", "{{ author.url }}", "{{ author.icon_url }}")
     {% endif %}
 
     {%- if color %}
@@ -19,6 +23,6 @@ EmbedBuilder embed = new EmbedBuilder()
 
     {%- for field in fields %}
     {%- if field.name or field.value %}
-    .addField("{{ field.name }}", "{{ field.value }}", {{ 'true' if field.inline else 'false' }})
+    .add{{ 'Inline' if field.inline }}Field("{{ field.name }}", "{{ field.value }}")
     {% endif %}
     {% endfor %}
