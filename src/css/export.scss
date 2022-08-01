@@ -1,0 +1,29 @@
+@import 'components/select';
+
+.export {
+    display: flex;
+    flex-direction: column;
+
+    &_inline {
+        display: flex;
+        color: #fff;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+#out {
+    background-color: #202225;
+    overflow-x: auto;
+    overflow-y: 0;
+    width: 100%;
+    height: 200px;
+    border-radius: 3px;
+    margin-top: 15px;
+    padding: 8px 10px;
+    color: #fff;
+    font-family: monospace;
+    user-select: all;
+}

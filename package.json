@@ -3,9 +3,12 @@
     "custom-select": "^1.1.15",
     "esbuild": "^0.14.51",
     "esbuild-plugin-import-glob": "^0.1.1",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "sass": "^1.54.0"
   },
   "scripts": {
-    "build": "node build.js"
+    "js": "node buildjs.js",
+    "css": "sass src/css/index.scss dist/css/style.css",
+    "build": "npm-run-all --parallel css js"
   }
 }

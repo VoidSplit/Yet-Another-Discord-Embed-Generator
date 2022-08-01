@@ -1,0 +1,125 @@
+form {
+    background-color: #36393F;
+    width: 50vw;
+    height: 100vh;
+    padding: 30px 25px 25px;
+    max-height: 100vh;
+    overflow: auto;
+
+    h1 {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: #72767d;
+        margin-bottom: 50px;
+    }
+
+    input {
+        position: relative;
+        display: block;
+        padding: 8px 10px;
+        border-radius: 3px;
+        width: 100%;
+        background-color: #202225;
+        border: none;
+        color: #fff;
+        margin-bottom: 18px;
+        margin-top: 5px;
+
+        :placeholder {
+            color: rgb(182, 182, 182);
+        }
+
+        :focus {
+            outline: 2px solid #5865f2;
+        }
+    }
+
+    label {
+        color: #838688;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .separator {
+        background-color: #72767d;
+        height: 3px;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+
+    #fields {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .field_line {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+
+        input {
+            margin-bottom: 0;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px
+
+            label {
+                line-height: 0px;
+            }
+        }
+    }
+
+    .btn {
+        border: none;
+        border-radius: 3px;
+        padding: 8px 10px;
+        color: #fff;
+
+        &.red {
+            background-color: #F04747;
+        }
+
+        &.green {
+            background-color: #43B581;
+        }
+    }
+
+    .timestamp {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+        input {
+            margin-bottom: 0;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            label {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+}

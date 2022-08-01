@@ -1,0 +1,18 @@
+@import
+    'components/user',
+    'components/embed';
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 50vw;
+}
+
+.message {
+    display: grid;
+    grid-template-columns: 50px auto;
+    color: #fff;
+    overflow: hidden;
+}

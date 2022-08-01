@@ -2,13 +2,13 @@ const ImportGlobPlugin = require('esbuild-plugin-import-glob');
 
 require('esbuild').build({
     entryPoints: [
-        'src/index.js',
+        'src/js/index.js',
     ],
     bundle: true,
     loader: {
         ".njs": "text"
     },
-    outfile: 'dist/app.js',
+    outfile: 'dist/js/app.js',
     plugins: [
         ImportGlobPlugin.default(),
     ]
