@@ -19,7 +19,7 @@
             <p class="name"><span id="preview_author_name">{{ author.name }}</span></p>
             {% endif %}
         </div>
-        {% endif %}é
+        {% endif %}
         {% if title %}
         <div class="title">
             <a {% if url %}href="{{ url }}"{% endif %} id="preview_url"><span id="preview_title">{{ title }}</span></a>
