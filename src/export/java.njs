@@ -21,6 +21,14 @@ EmbedBuilder embed = new EmbedBuilder()
     .setFooter("{{ footer.text }}", "{{ footer.icon_url }}")
     {% endif %}
 
+    {%- if image.url %}
+    .setImage("{{ image.url }}")
+    {% endif %}
+
+    {%- if thumbnail.url %}
+    .setThumbnail("{{ thumbnail.url }}")
+    {% endif %}
+
     {%- for field in fields %}
     {%- if field.name or field.value %}
     .add{{ 'Inline' if field.inline }}Field("{{ field.name }}", "{{ field.value }}")
