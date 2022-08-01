@@ -2,15 +2,13 @@ import * as form from './form.js'
 import * as preview from './preview.js'
 import * as form_ui from './ui/form.js'
 import * as select from './ui/select.js'
-import * as templates from './templates/export/_syntaxes.js'
+import * as exp from './export.js'
 
-import { export_ } from './export.js'
-
-let syntaxes = {}
-Object.keys(templates).forEach((e) => {
-    syntaxes[e] = e
+let options = {}
+Object.keys(exp.getSyntaxes()).forEach((e) => {
+    options[e] = e
 })
-select.populate(syntaxes)
+select.populate(options)
 
 document.querySelectorAll("#embed_form input").forEach((element) => {
     element.addEventListener("keyup", (event) => {
@@ -22,7 +20,7 @@ document.querySelectorAll("#embed_form input").forEach((element) => {
 window.exp = () => {
     const embed = form.getEmbed()
     const syntax = select.get()
-    const code = export_(syntax, embed)
+    const code = exp.export_(syntax, embed)
     document.getElementById("out").innerText = code
 }
 

@@ -1,5 +1,18 @@
-import * as syntaxes from './templates/export/_syntaxes.js'
 import nunjucks from 'nunjucks'
+const templates = require('./templates/export/*.njs')
+
+export function getSyntaxes() {
+    let contents = templates.default
+    let filenames = templates.filenames
+    let syntaxes = {}
+
+    for (let i = 0; i < contents.length; i++) {
+        const lang = filenames[i].match(/\.\/templates\/export\/(.*).njs/)[1]
+        syntaxes[lang] = contents[i].default
+    }
+
+    return syntaxes
+}
 
 export function export_(language, embed) {
     const env = nunjucks.configure({
@@ -13,6 +26,8 @@ export function export_(language, embed) {
         arr = arr.map(x => x.join(del1))
         return arr.join(del2)
     })
+
+    const syntaxes = getSyntaxes()
 
     return env.renderString(syntaxes[language], embed)
 }
