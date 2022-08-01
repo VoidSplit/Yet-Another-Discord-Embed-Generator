@@ -89,6 +89,13 @@
         font-size: 13px;
     }
 
+    #fields {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
     .field_zone {
         display: flex;
         flex-wrap: wrap;
