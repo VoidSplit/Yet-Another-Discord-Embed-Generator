@@ -1,11 +1,11 @@
 <div class="colored_line" id="preview_color"></div>
 <div class="inner">
     {% if thumbnail.url %}
-        <div class="thumbnail">
-            <div class="wrapper">
-                <img src="{{ thumbnail.url }}" alt="" id="preview_thumbnail">
-            </div>
+    <div class="thumbnail">
+        <div class="wrapper">
+            <img src="{{ thumbnail.url }}" alt="" id="preview_thumbnail">
         </div>
+    </div>
     {% endif %}
     <div class="main_content">
         {% if author.name or author.icon_url %}
