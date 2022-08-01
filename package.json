@@ -12,7 +12,7 @@
   "scripts": {
     "html": "nunjucks -p src/html/ -o site/ index.html",
     "css": "sass --style compressed src/css/index.scss site/dist/css/style.css",
-    "resources": "cpy resources/ site/",
+    "resources": "cpy --cwd src resources/ ../site/",
     "js": "node esbuild.js",
     "build": "npm-run-all --parallel html css resources js"
   }
