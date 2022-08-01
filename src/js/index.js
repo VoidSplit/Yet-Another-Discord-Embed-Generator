@@ -2,7 +2,7 @@ import * as form from './form.js'
 import * as preview from './preview.js'
 import * as form_ui from './ui/form.js'
 import * as select from './ui/select.js'
-import * as templates from './export/templates.js'
+import * as templates from './templates/export/_syntaxes.js'
 
 import { export_ } from './export.js'
 

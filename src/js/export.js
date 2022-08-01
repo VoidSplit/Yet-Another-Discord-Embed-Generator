@@ -1,4 +1,4 @@
-import * as templates from './export/templates.js'
+import * as syntaxes from './templates/export/_syntaxes.js'
 import nunjucks from 'nunjucks'
 
 export function export_(language, embed) {
@@ -14,5 +14,5 @@ export function export_(language, embed) {
         return arr.join(del2)
     })
 
-    return env.renderString(templates[language], embed)
+    return env.renderString(syntaxes[language], embed)
 }
