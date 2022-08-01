@@ -8,7 +8,7 @@
   },
   "scripts": {
     "js": "node buildjs.js",
-    "css": "sass src/css/index.scss dist/css/style.css",
+    "css": "sass --style compressed src/css/index.scss dist/css/style.css",
     "build": "npm-run-all --parallel css js"
   }
 }
