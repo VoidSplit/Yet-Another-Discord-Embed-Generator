@@ -1,15 +1,19 @@
 {
   "dependencies": {
+    "cpy-cli": "^4.1.0",
     "custom-select": "^1.1.15",
     "esbuild": "^0.14.51",
     "esbuild-plugin-import-glob": "^0.1.1",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
+    "nunjucks-cli": "^1.0.0",
     "sass": "^1.54.0"
   },
   "scripts": {
+    "html": "nunjucks -p src/html/ -o site/ index.html",
+    "css": "sass --style compressed src/css/index.scss site/dist/css/style.css",
+    "resources": "cpy resources/ site/",
     "js": "node buildjs.js",
-    "css": "sass --style compressed src/css/index.scss dist/css/style.css",
-    "build": "npm-run-all --parallel css js"
+    "build": "npm-run-all --parallel html css resources js"
   }
 }

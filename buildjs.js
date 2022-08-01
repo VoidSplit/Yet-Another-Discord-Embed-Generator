@@ -8,7 +8,7 @@ require('esbuild').build({
     loader: {
         ".njs": "text"
     },
-    outfile: 'dist/js/app.js',
+    outfile: 'site/dist/js/app.js',
     plugins: [
         ImportGlobPlugin.default(),
     ]

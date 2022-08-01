@@ -19,4 +19,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: 41898282+github-actions[bot]@users.noreply.github.com
-          build_dir: .
+          build_dir: site

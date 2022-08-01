@@ -1,0 +1,60 @@
+<h1>Setup your custom embed.</h1>
+<p>Customize your embed from A to Z and export it in the language you want!</p>
+
+<label for="input_author_name">Author name</label>
+<input type="text" placeholder="Some name" id="input_author_name">
+<label for="input_author_url">Author url</label>
+<input type="text" placeholder="https://my-super-website.com/profile/" id="input_author_url">
+<label for="input_author_icon_url">Author icon url</label>
+<input type="text" placeholder="https://my-super-website.com/profile-picture.png" id="input_author_icon_url">
+
+<div class="separator"></div>
+
+<label for="input_color">Color</label>
+<input type="color" id="input_color">
+<label for="input_title">Title</label>
+<input type="text" placeholder="Some title" id="input_title">
+<label for="input_description">Description</label>
+<input type="text" placeholder="Some description here" id="input_description">
+<label for="input_url">Title Url</label>
+<input type="text" placeholder="https://my-super-website.com/" id="input_url">
+<label for="input_thumbnail_url">Thumbnail url</label>
+<input type="text" placeholder="https://my-super-website/thumbnail.png" id="input_thumbnail_url">
+
+<div class="separator"></div>
+
+<label>Fields</label>
+<div id="fields_wrapper"></div>
+<button class="btn green" onclick="addField()">
+    Add field
+</button>
+
+<div class="separator"></div>
+
+<label for="input_image_url">Image url</label>
+<input type="text" placeholder="https://my-super-website/content.mp4" id="input_image_url">
+
+<div class="separator"></div>
+
+<label for="input_footer_icon_url">Footer icon url</label>
+<input type="text" placeholder="https://my-super-website/footer-icon.png" id="input_footer_icon_url">
+<label for="input_footer_text">Footer text</label>
+<input type="text" placeholder="Some footer text here" id="input_footer_text">
+
+<div class="timestamp">
+    <input type="date" name="" id="input_timestamp">
+    <div class="checkbox">
+        <input type="checkbox" name="" id="input_timestamp_auto">
+        <label>Auto</label>
+    </div>
+</div>
+<div class="separator"></div>
+<div class="export">
+    <label>Export</label>
+    <div class="export_inline">
+        <select id="export_select" style="display: none;">
+        </select>
+        <button class="btn green" onclick="exp()">Export</button>
+    </div>
+    <pre id="out"></pre>
+</div>
