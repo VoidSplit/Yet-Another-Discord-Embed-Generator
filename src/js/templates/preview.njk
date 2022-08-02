@@ -49,7 +49,7 @@
             </div>
         </div>
         {% endif %}
-        {% if footer.text or footer.icon_url %}
+        {% if footer.text or footer.icon_url or timestamp %}
         <div class="footer">
             {% if footer.icon_url %}
             <div class="img">
@@ -59,7 +59,9 @@
             {% if footer.text %}
             <p class="text">{{ footer.text }}</p>
             {% endif %}
+            {% if (footer.text or footer.icon_url) and timestamp %}
             <span class="decoration"></span>
+            {% endif %}
             {% if timestamp %}
             <div class="timestamp">{{ timestamp | timestamp }}</div>
             {% endif %}
