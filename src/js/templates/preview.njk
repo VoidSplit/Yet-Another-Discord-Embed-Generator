@@ -27,7 +27,7 @@
         {% endif %}
         {% if description %}
         <div class="description">
-            {{ description }}
+            {{ description | nl2br }}
         </div>
         {% endif %}
         {% if fields | length %}
