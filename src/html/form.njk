@@ -3,17 +3,17 @@
 <h1>Setup your custom embed.</h1>
 <p>Customize your embed from A to Z and export it in the language you want!</p>
 
-{{ form.text("author_name", "Author name", "Some name") }}
-{{ form.text("author_url", "Author url", "https://my-super-website.com/profile/") }}
-{{ form.text("author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
+{{ form.input("text", "author_name", "Author name", "Some name") }}
+{{ form.input("text", "author_url", "Author url", "https://my-super-website.com/profile/") }}
+{{ form.input("text", "author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
 
 {{ form.sep }}
 
-{{ form.color("color", "Color") }}
-{{ form.text("title", "Title", "Some title") }}
-{{ form.text("description", "Description", "Some description here") }}
-{{ form.text("url", "Title Url", "https://my-super-website.com/") }}
-{{ form.text("thumbnail_url", "Thumbnail url", "https://my-super-website/thumbnail.png") }}
+{{ form.input("color", "color", "Color") }}
+{{ form.input("text", "title", "Title", "Some title") }}
+{{ form.input("text", "description", "Description", "Some description here") }}
+{{ form.input("text", "url", "Title Url", "https://my-super-website.com/") }}
+{{ form.input("text", "thumbnail_url", "Thumbnail url", "https://my-super-website/thumbnail.png") }}
 
 {{ form.sep }}
 
@@ -23,18 +23,18 @@
 
 {{ form.sep }}
 
-{{ form.text("image_url", "Image url", "https://my-super-website/content.jpg") }}
+{{ form.input("text", "image_url", "Image url", "https://my-super-website/content.jpg") }}
 
 {{ form.sep }}
 
-{{ form.text("footer_icon_url", "Footer icon url", "https://my-super-website/footer-icon.png") }}
-{{ form.text("footer_text", "Footer text", "Some footer text here") }}
+{{ form.input("text", "footer_icon_url", "Footer icon url", "https://my-super-website/footer-icon.png") }}
+{{ form.input("text", "footer_text", "Footer text", "Some footer text here") }}
 
 <label for="input_timestamp">Timestamp</label>
 <div class="timestamp">
-    {{ form.date("timestamp") }}
+    {{ form.input("date", "timestamp") }}
     <div class="checkbox">
-        {{ form.checkbox("timestamp_auto") }}
+        {{ form.input("checkbox", "timestamp_auto") }}
         <label>Auto</label>
     </div>
 </div>

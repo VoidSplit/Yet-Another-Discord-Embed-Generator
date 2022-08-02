@@ -1,29 +1,15 @@
-{% macro text(id, label, placeholder) %}
+{% macro input(type, id, label, placeholder) %}
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<input type="text" placeholder="{{ placeholder }}" id="input_{{ id }}">
+<input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}>
 {% endmacro %}
 
-{% macro color(id, label) %}
+{% macro textarea(id, label, placeholder) %}
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<input type="color" id="input_{{ id }}">
-{% endmacro %}
-
-{% macro date(id, label) %}
-{% if label %}
-<label for="input_{{ id }}">{{ label }}</label>
-{% endif %}
-<input type="date" id="input_{{ id }}">
-{% endmacro %}
-
-{% macro checkbox(id, label) %}
-{% if label %}
-<label for="input_{{ id }}">{{ label }}</label>
-{% endif %}
-<input type="checkbox" id="input_{{ id }}">
+<textarea id="input_{{ id }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}></textarea>
 {% endmacro %}
 
 {% set sep = '<div class="separator"></div>' | safe %}
