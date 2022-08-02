@@ -28,7 +28,9 @@ function getTimestamp() {
     } else {
         let timestamp = getElement("timestamp")
         if (timestamp) {
-            return new Date(timestamp.value).toISOString()
+            if (timestamp.value) {
+                return new Date(timestamp.value).toISOString()
+            }
         }
     }
 }
