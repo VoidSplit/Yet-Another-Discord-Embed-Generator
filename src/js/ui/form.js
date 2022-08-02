@@ -1,4 +1,4 @@
-export function addField() {
+function addField() {
     const fields_element = document.getElementById("fields_wrapper")
 
     let div = document.createElement("div")
@@ -19,3 +19,5 @@ export function addField() {
     `
     fields_element.appendChild(div)
 }
+
+window.addField = addField
