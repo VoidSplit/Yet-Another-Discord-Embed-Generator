@@ -27,7 +27,7 @@ export function preview(embed) {
         let meridiem = "AM"
 
         if (hours > 12) {
-            hours = 12 - hours
+            hours -= 12
             meridiem = "PM"
         }
 
