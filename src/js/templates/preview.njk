@@ -32,12 +32,14 @@
         {% endif %}
         {% if fields | length %}
         <div id="fields">
-            {% for field in fields %}
+            {% for zone in fields | fieldZones %}
             <div class="field_zone">
+                {% for field in zone %}
                 <div class="field">
                     <div class="field_name">{{ field.name | markdown }}</div>
                     <div class="field_value">{{ field.value | markdown }}</div>
                 </div>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>

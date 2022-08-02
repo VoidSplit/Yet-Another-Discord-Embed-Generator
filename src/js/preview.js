@@ -30,6 +30,23 @@ export function preview(embed) {
         return `${month}/${day}/${year}`
     })
 
+    env.addFilter("fieldZones", (fields) => {
+        let zones = []
+        let current_zone = null
+        fields.forEach((field) => {
+            if (!current_zone || !field.inline) {
+                current_zone = []
+
+                if (current_zone) {
+                    zones.push(current_zone)
+                }
+            }
+
+            current_zone.push(field)
+        })
+        return zones
+    })
+
     env.addFilter("markdown", (text) => {
         if (text) {
             return markdown.toHTML(text, {
