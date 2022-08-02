@@ -96,15 +96,15 @@ form {
         input {
             margin-bottom: 0;
         }
+    }
 
-        .checkbox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+    .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-            label {
-                margin-top: 5px;
-            }
+        label {
+            margin-top: 5px;
         }
     }
 }
