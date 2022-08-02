@@ -12,11 +12,11 @@
 <input type="color" id="input_{{ id }}">
 {% endmacro %}
 
-{% macro datetime(id, label) %}
+{% macro date(id, label) %}
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<input type="datetime-local" id="input_{{ id }}">
+<input type="date" id="input_{{ id }}">
 {% endmacro %}
 
 {% macro checkbox(id, label) %}
