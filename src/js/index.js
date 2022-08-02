@@ -1,5 +1,6 @@
 import * as form from './form.js'
 import * as form_ui from './ui/form.js'
+import * as preview from './preview.js'
 import * as select from './ui/select.js'
 import * as exp from './export.js'
 
@@ -17,5 +18,7 @@ window.exp = () => {
 }
 
 form_ui.updateEvents()
+
+preview.preview(form.getEmbed())
 
 window.addField = form_ui.addField
