@@ -1,51 +1,53 @@
 {% import 'include/form.njk' as form %}
 
-<h1>Setup your custom embed.</h1>
-<p>Customize your embed from A to Z and export it in the language you want!</p>
+<form onsubmit="return false" id="embed_form">
+    <h1>Setup your custom embed.</h1>
+    <p>Customize your embed from A to Z and export it in the language you want!</p>
 
-{{ form.input("text", "author_name", "Author name", "Some name") }}
-{{ form.input("text", "author_url", "Author url", "https://my-super-website.com/profile/") }}
-{{ form.input("text", "author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
+    {{ form.input("text", "author_name", "Author name", "Some name") }}
+    {{ form.input("text", "author_url", "Author url", "https://my-super-website.com/profile/") }}
+    {{ form.input("text", "author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
 
-{{ form.sep }}
+    {{ form.sep }}
 
-{{ form.input("color", "color", "Color") }}
-{{ form.input("text", "title", "Title", "Some title") }}
-{{ form.textarea("description", "Description", "Some description here") }}
-{{ form.input("text", "url", "Title Url", "https://my-super-website.com/") }}
-{{ form.input("text", "thumbnail_url", "Thumbnail url", "https://my-super-website/thumbnail.png") }}
+    {{ form.input("color", "color", "Color") }}
+    {{ form.input("text", "title", "Title", "Some title") }}
+    {{ form.textarea("description", "Description", "Some description here") }}
+    {{ form.input("text", "url", "Title Url", "https://my-super-website.com/") }}
+    {{ form.input("text", "thumbnail_url", "Thumbnail url", "https://my-super-website/thumbnail.png") }}
 
-{{ form.sep }}
+    {{ form.sep }}
 
-<label>Fields</label>
-<div id="fields_wrapper"></div>
-<button class="btn green" onclick="addField()">Add field</button>
+    <label>Fields</label>
+    <div id="fields_wrapper"></div>
+    <button class="btn green" onclick="addField()">Add field</button>
 
-{{ form.sep }}
+    {{ form.sep }}
 
-{{ form.input("text", "image_url", "Image url", "https://my-super-website/content.jpg") }}
+    {{ form.input("text", "image_url", "Image url", "https://my-super-website/content.jpg") }}
 
-{{ form.sep }}
+    {{ form.sep }}
 
-{{ form.input("text", "footer_icon_url", "Footer icon url", "https://my-super-website/footer-icon.png") }}
-{{ form.input("text", "footer_text", "Footer text", "Some footer text here") }}
+    {{ form.input("text", "footer_icon_url", "Footer icon url", "https://my-super-website/footer-icon.png") }}
+    {{ form.input("text", "footer_text", "Footer text", "Some footer text here") }}
 
-<label for="input_timestamp">Timestamp</label>
-<div class="timestamp">
-    {{ form.input("date", "timestamp") }}
-    <div class="checkbox">
-        {{ form.input("checkbox", "timestamp_auto") }}
-        <label>Auto</label>
+    <label for="input_timestamp">Timestamp</label>
+    <div class="timestamp">
+        {{ form.input("date", "timestamp") }}
+        <div class="checkbox">
+            {{ form.input("checkbox", "timestamp_auto") }}
+            <label>Auto</label>
+        </div>
     </div>
-</div>
 
-{{ form.sep }}
+    {{ form.sep }}
 
-<div class="export">
-    <label>Export</label>
-    <div class="export_inline">
-        <select id="export_select" style="display: none;"></select>
-        <button class="btn green" onclick="exp()">Export</button>
+    <div class="export">
+        <label>Export</label>
+        <div class="export_inline">
+            <select id="export_select" style="display: none;"></select>
+            <button class="btn green" onclick="exp()">Export</button>
+        </div>
+        <pre id="out"></pre>
     </div>
-    <pre id="out"></pre>
-</div>
+</form>

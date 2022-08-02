@@ -10,12 +10,8 @@
     <link rel="stylesheet" href="dist/js/app.css">
 </head>
 <body>
-    <div class="preview">
-        {% include 'preview.njk' %}
-    </div>
-    <form onsubmit="return false" id="embed_form">
-        {% include 'form.njk' %}
-    </form>
+    {% include 'preview.njk' %}
+    {% include 'form.njk' %}
     <script src="dist/js/app.js"></script>
 </body>
 </html>
