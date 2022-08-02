@@ -22,7 +22,7 @@ function get(id, parent=document) {
 }
 
 function getTimestamp() {
-    let auto = getElement("timestamp_auto")
+    let auto = getElement("timestamp_auto").checked
     if (auto) {
         return "__AUTO__"
     } else {
@@ -47,12 +47,13 @@ function getFields() {
 }
 
 export function getEmbed() {
+    console.log(getTimestamp())
     return new Embed(
         get("title"),
         get("type"),
         get("description"),
         get("url"),
-        getTimestamp("timestamp"),
+        getTimestamp(),
         get("color"),
         new Footer(
             get("footer_text"),

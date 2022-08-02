@@ -53,6 +53,10 @@ const embed = new EmbedBuilder()
     ]) }})
     {% endif %}
 
+    {%- if timestamp %}
+    .setTimestamp({% if timestamp != '__AUTO__' %}"{{ timestamp }}"{% endif %})
+    {% endif %}
+
     {%- if fields | length %}
     .addFields(
         {% for field in fields %}
