@@ -22,12 +22,12 @@
         {% endif %}
         {% if title %}
         <div class="title">
-            <a {% if url %}href="{{ url }}"{% endif %}>{{ title }}</a>
+            <a {% if url %}href="{{ url }}"{% endif %}>{{ title | markdown }}</a>
         </div>
         {% endif %}
         {% if description %}
         <div class="description">
-            {{ description | nl2br }}
+            {{ description | markdown }}
         </div>
         {% endif %}
         {% if fields | length %}
@@ -35,8 +35,8 @@
             {% for field in fields %}
             <div class="field_zone">
                 <div class="field">
-                    <div class="field_name">{{ field.name }}</div>
-                    <div class="field_value">{{ field.value }}</div>
+                    <div class="field_name">{{ field.name | markdown }}</div>
+                    <div class="field_value">{{ field.value | markdown }}</div>
                 </div>
             </div>
             {% endfor %}

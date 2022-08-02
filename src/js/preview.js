@@ -1,5 +1,6 @@
 import template from './templates/preview.njk'
 import nunjucks from 'nunjucks'
+import * as markdown from 'discord-markdown'
 
 export function preview(embed) {
     const env = nunjucks.configure({
@@ -22,6 +23,10 @@ export function preview(embed) {
         let year = date.getFullYear()
 
         return `${month}/${day}/${year}`
+    })
+
+    env.addFilter("markdown", (text) => {
+        return markdown.toHTML(text)
     })
 
     document.getElementById("preview").innerHTML = env.renderString(template, embed)
