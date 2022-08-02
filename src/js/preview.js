@@ -9,7 +9,13 @@ export function preview(embed) {
     })
 
     env.addFilter("timestamp", (timestamp) => {
-        const date = new Date(timestamp)
+        let date = null
+
+        if (timestamp == "__AUTO__") {
+            date = new Date(Date.now())
+        } else {
+            date = new Date(timestamp)
+        }
 
         let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][date.getDay()]
         let month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][date.getMonth()]

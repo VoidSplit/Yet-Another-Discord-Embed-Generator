@@ -21,10 +21,15 @@ function get(id, parent=document) {
     return null
 }
 
-function getTimestamp(id, parent=document) {
-    let element = getElement(id, parent)
-    if (element) {
-        return new Date(element.value).toISOString()
+function getTimestamp() {
+    let auto = getElement("timestamp_auto")
+    if (auto) {
+        return "__AUTO__"
+    } else {
+        let timestamp = getElement("timestamp")
+        if (timestamp) {
+            return new Date(timestamp.value).toISOString()
+        }
     }
 }
 
