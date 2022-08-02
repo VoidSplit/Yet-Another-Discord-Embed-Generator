@@ -5,6 +5,8 @@ import * as markdown from 'discord-markdown'
 import { HighlightJS } from 'highlight.js'
 import './hljs.css'
 
+HighlightJS.configure({languages:[]})
+
 export function preview(embed) {
     const env = nunjucks.configure({
         autoescape: false,
