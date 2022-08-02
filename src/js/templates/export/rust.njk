@@ -1,0 +1,47 @@
+.embed(|e| e
+{% filter section %}
+    {%- if title %}
+    .title("{{ title }}")
+    {% endif -%}
+
+    {%- if description %}
+    .description("{{ description }}")
+    {% endif %}
+
+    {%- if image.url %}
+    .image("{{ image.url }}")
+    {% endif %}
+
+    {%- if color %}
+    .colour("{{ color }}")
+    {% endif %}
+
+    {%- if thumbnail.url %}
+    .thumbnail("{{ thumbnail.url }}")
+    {% endif %}
+
+    {%- for field in fields %}
+    {%- if field.name or field.value %}
+    .field("{{ field.name }}", "{{ field.value }}", {{ 'true' if field.inline else 'false' }})
+    {% endif %}
+    {% endfor %}
+
+    {%- if author.name or author.icon_url %}
+    .author(|a| a
+{% filter section %}
+        {%- if author.icon_url %}
+        .icon_url("{{ author.icon_url }}")
+        {% endif %}
+
+        {%- if author.name %}
+        .name("{{ author.name }}")
+        {% endif %}
+
+        {%- if author.url %}
+        .url("{{ author.url }}")
+        {% endif %}
+{% endfilter %}
+    )
+    {% endif %}
+{% endfilter %}
+)
