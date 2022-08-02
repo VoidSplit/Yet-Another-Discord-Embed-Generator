@@ -29,7 +29,13 @@ export function preview(embed) {
     })
 
     env.addFilter("markdown", (text) => {
-        return markdown.toHTML(text)
+        if (text) {
+            return markdown.toHTML(text, {
+                embed: true
+            })
+        } else {
+            return ""
+        }
     })
 
     document.getElementById("preview").innerHTML = env.renderString(template, embed)
