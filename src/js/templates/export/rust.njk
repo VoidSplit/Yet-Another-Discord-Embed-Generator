@@ -1,8 +1,9 @@
 .embed(|e| e
 {% filter section %}
+
     {%- if title %}
     .title("{{ title }}")
-    {% endif -%}
+    {% endif %}
 
     {%- if description %}
     .description("{{ description }}")
@@ -28,7 +29,8 @@
 
     {%- if author.name or author.icon_url %}
     .author(|a| a
-{% filter section %}
+    {% filter section %}
+
         {%- if author.icon_url %}
         .icon_url("{{ author.icon_url }}")
         {% endif %}
@@ -40,8 +42,10 @@
         {%- if author.url %}
         .url("{{ author.url }}")
         {% endif %}
-{% endfilter %}
+
+    {%- endfilter %}
     )
     {% endif %}
-{% endfilter %}
+
+{%- endfilter %}
 )
