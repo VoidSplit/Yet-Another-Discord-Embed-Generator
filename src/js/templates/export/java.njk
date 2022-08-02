@@ -1,5 +1,5 @@
 EmbedBuilder embed = new EmbedBuilder()
-{##}
+{% filter section %}
 
     {%- if title %}
     .setTitle("{{ title }}")
@@ -34,3 +34,5 @@ EmbedBuilder embed = new EmbedBuilder()
     .add{{ 'Inline' if field.inline }}Field("{{ field.name }}", "{{ field.value }}")
     {% endif %}
     {% endfor %}
+
+{% endfilter %}

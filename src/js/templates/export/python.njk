@@ -22,7 +22,7 @@ embed = discord.Embed(
         ], ", \n    "
     ) }}
 )
-{##}
+{% filter section %}
 
     {{- fun("setAuthor", [
         { name: "name", value: author.name },
@@ -52,3 +52,5 @@ embed = discord.Embed(
             ]) }}
         {%- endif -%}
     {%- endfor %}
+
+{% endfilter %}
