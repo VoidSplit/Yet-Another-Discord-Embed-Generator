@@ -1,8 +1,8 @@
-{% macro input(type, id, label, placeholder) %}
+{% macro input(type, id, label, placeholder, maxlength) %}
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}>
+<input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if maxlength %}maxlength="{{ maxlength }}"{% endif %} >
 {% endmacro %}
 
 {% macro textarea(id, label, placeholder) %}

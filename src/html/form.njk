@@ -4,15 +4,15 @@
     <h1>Setup your custom embed.</h1>
     <p>Customize your embed from A to Z and export it in the language you want!</p>
 
-    {{ form.input("text", "author_name", "Author name", "Some name") }}
+    {{ form.input("text", "author_name", "Author name", "Some name", 256) }}
     {{ form.input("text", "author_url", "Author url", "https://my-super-website.com/profile/") }}
     {{ form.input("text", "author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
 
     {{ form.sep }}
 
     {{ form.input("color", "color", "Color") }}
-    {{ form.input("text", "title", "Title", "Some title") }}
-    {{ form.textarea("description", "Description", "Some description here") }}
+    {{ form.input("text", "title", "Title", "Some title", 256) }}
+    {{ form.textarea("description", "Description", "Some description here", 4096) }}
     {{ form.input("text", "url", "Title Url", "https://my-super-website.com/") }}
     {{ form.input("text", "thumbnail_url", "Thumbnail url", "https://my-super-website/thumbnail.png") }}
 
@@ -29,7 +29,7 @@
     {{ form.sep }}
 
     {{ form.input("text", "footer_icon_url", "Footer icon url", "https://my-super-website/footer-icon.png") }}
-    {{ form.input("text", "footer_text", "Footer text", "Some footer text here") }}
+    {{ form.input("text", "footer_text", "Footer text", "Some footer text here", 2048) }}
 
     <label for="input_timestamp">Timestamp</label>
     <div class="timestamp">
