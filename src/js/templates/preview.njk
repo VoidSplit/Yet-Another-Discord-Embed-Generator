@@ -1,9 +1,9 @@
-<div class="colored_line" id="preview_color" style="background-color: {{ color }}"></div>
+<div class="colored_line" style="background-color: {{ color }}"></div>
 <div class="inner">
     {% if thumbnail.url %}
     <div class="thumbnail">
         <div class="wrapper">
-            <img src="{{ thumbnail.url }}" alt="" id="preview_thumbnail">
+            <img src="{{ thumbnail.url }}" alt="">
         </div>
     </div>
     {% endif %}
@@ -12,22 +12,22 @@
         <div class="name_wrapper">
             {% if author.icon_url %}
             <div class="img">
-                <img src="{{ author.icon_url }}" alt="" srcset="" id="preview_author_icon">
+                <img src="{{ author.icon_url }}">
             </div>
             {% endif %}
             {% if author.name %}
-            <p class="name"><span id="preview_author_name">{{ author.name }}</span></p>
+            <p class="name">{{ author.name }}</p>
             {% endif %}
         </div>
         {% endif %}
         {% if title %}
         <div class="title">
-            <a {% if url %}href="{{ url }}"{% endif %} id="preview_url"><span id="preview_title">{{ title }}</span></a>
+            <a {% if url %}href="{{ url }}"{% endif %}>{{ title }}</a>
         </div>
         {% endif %}
         {% if description %}
         <div class="description">
-            <span id="preview_description">{{ description }}</span>
+            {{ description }}
         </div>
         {% endif %}
         {% if fields | length %}
@@ -45,7 +45,7 @@
         {% if image.url %}
         <div class="img_element">
             <div class="wrapper">
-                <img src="{{ image.url }}" alt="" id="preview_image">
+                <img src="{{ image.url }}">
             </div>
         </div>
         {% endif %}
@@ -53,15 +53,15 @@
         <div class="footer">
             {% if footer.icon_url %}
             <div class="img">
-                <img src="{{ footer.icon_url }}" alt="" id="preview_footer_icon">
+                <img src="{{ footer.icon_url }}">
             </div>
             {% endif %}
             {% if footer.text %}
-            <p class="text"><span id="preview_footer_text">{{ footer.text }}</span></p>
+            <p class="text">{{ footer.text }}</p>
             {% endif %}
             <span class="decoration"></span>
             {% if timestamp %}
-            <div class="timestamp"><span id="preview_timestamp">{{ timestamp }}</span></div>
+            <div class="timestamp">{{ timestamp | timestamp }}</div>
             {% endif %}
         </div>
         {% endif %}

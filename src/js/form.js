@@ -21,6 +21,13 @@ function get(id, parent=document) {
     return null
 }
 
+function getTimestamp(id, parent=document) {
+    let element = getElement(id, parent)
+    if (element) {
+        return new Date(element.value).toISOString()
+    }
+}
+
 function getFields() {
     let fields = []
     const children = document.getElementById("fields_wrapper").children
@@ -40,7 +47,7 @@ export function getEmbed() {
         get("type"),
         get("description"),
         get("url"),
-        get("timestamp"),
+        getTimestamp("timestamp"),
         get("color"),
         new Footer(
             get("footer_text"),
