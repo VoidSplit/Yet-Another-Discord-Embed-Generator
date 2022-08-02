@@ -26,7 +26,7 @@ export function addField() {
                 <input type="checkbox" name="" id="input_inline">
                 <label>Inline</label>
             </div>
-            <button class="btn red" onclick="this.parentNode.remove()">Delete</button>
+            <button class="btn red" onclick="this.parentNode.parentNode.remove()">Delete</button>
         </div>
     `
     fields_element.appendChild(div)
