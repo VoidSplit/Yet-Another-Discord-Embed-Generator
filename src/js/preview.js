@@ -39,7 +39,7 @@ export function preview(embed) {
                 if (cur == -1) {
                     cur = zones.push([]) - 1
                 } else {
-                    if (zones[cur].length >= 3) {
+                    if (zones[cur].length >= 4) {
                         cur = zones.push([]) - 1
                     }
                 }
