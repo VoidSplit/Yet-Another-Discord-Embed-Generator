@@ -17,21 +17,11 @@ export function preview(embed) {
             date = new Date(timestamp)
         }
 
-        let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][date.getDay()]
-        let month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][date.getMonth()]
-        let dayNo = date.getDate()
+        let month = date.getMonth().toString().padStart(2, "0")
+        let day = date.getDate().toString().padStart(2, "0")
         let year = date.getFullYear()
 
-        let hours = date.getHours()
-        let minutes = date.getMinutes()
-        let meridiem = "AM"
-
-        if (hours > 12) {
-            hours -= 12
-            meridiem = "PM"
-        }
-
-        return `${day} ${month} ${dayNo}, ${year} at ${hours}:${minutes.toString().padStart(2, '0')} ${meridiem}`
+        return `${month}/${day}/${year}`
     })
 
     document.getElementById("preview").innerHTML = env.renderString(template, embed)
