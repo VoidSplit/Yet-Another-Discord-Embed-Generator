@@ -60,7 +60,11 @@
             aspect-ratio: 1;
             border-radius: 50%;
         }
-
+        .name {
+            display: flex;
+            align-items: center;
+            height: 24px;
+        }
         p:hover {
             text-decoration: underline;
             cursor: pointer;

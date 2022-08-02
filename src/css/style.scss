@@ -12,10 +12,10 @@ body {
 }
 
 @media screen and (max-width: 870px) {
-    .preview {
+    body .preview {
         width: 100%;
     }
-    form {
+    body form {
         max-height: inherit;
         width: 100%;
         height: auto;

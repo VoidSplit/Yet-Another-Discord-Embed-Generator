@@ -16,7 +16,10 @@ form {
         margin-bottom: 50px;
     }
 
-    input {
+    textarea {
+        resize: vertical; 
+    }
+    input,textarea {
         position: relative;
         display: block;
         padding: 8px 10px;
