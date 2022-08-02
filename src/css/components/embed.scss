@@ -13,10 +13,10 @@
         background-color: #2F3136;
         border-radius: 0 4px 4px 0;
         height: 100%;
-        width: 100%;
+        min-width: 100px;
         padding: 16px;
         display: grid;
-        grid-template-columns: auto 80px;
+        grid-template-columns: auto auto;
     }
 }
 
@@ -141,10 +141,13 @@
         .wrapper {
             max-width: 100%;
             overflow: hidden;
+            border-radius: 4px;
+            overflow: hidden;
 
             img {
-                border-radius: 4px;
-                overflow: hidden;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
                 cursor: pointer;
             }
         }
