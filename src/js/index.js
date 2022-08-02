@@ -10,14 +10,17 @@ Object.keys(exp.getSyntaxes()).forEach((e) => {
 })
 select.populate(options)
 
+document.getElementById("embed_form").addEventListener("input", (event) => {
+    const embed = form.getEmbed()
+    preview.preview(embed)
+})
+
 window.exp = () => {
     const embed = form.getEmbed()
     const syntax = select.get()
     const code = exp.export_(syntax, embed)
     document.getElementById("out").innerText = code
 }
-
-form_ui.updateEvents()
 
 preview.preview(form.getEmbed())
 

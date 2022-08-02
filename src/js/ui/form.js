@@ -1,15 +1,3 @@
-import * as form from '../form.js'
-import * as preview from '../preview.js'
-
-export function updateEvents() {
-    document.getElementById("embed_form").querySelectorAll("input, textarea").forEach((element) => {
-        element.addEventListener("input", (event) => {
-            const embed = form.getEmbed()
-            preview.preview(embed)
-        })
-    })
-}
-
 export function addField() {
     const fields_element = document.getElementById("fields_wrapper")
 
@@ -30,6 +18,4 @@ export function addField() {
         </div>
     `
     fields_element.appendChild(div)
-
-    updateEvents()
 }
