@@ -49,7 +49,6 @@ function getFields() {
 }
 
 export function getEmbed() {
-    console.log(getTimestamp())
     return new Embed(
         get("title"),
         get("type"),
