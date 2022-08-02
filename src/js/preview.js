@@ -32,18 +32,24 @@ export function preview(embed) {
 
     env.addFilter("fieldZones", (fields) => {
         let zones = []
-        let current_zone = null
+        let cur = -1
+
         fields.forEach((field) => {
-            if (!current_zone || !field.inline) {
-                current_zone = []
-
-                if (current_zone) {
-                    zones.push(current_zone)
+            if (field.inline) {
+                if (cur == -1) {
+                    cur = zones.push([]) - 1
+                } else {
+                    if (zones[cur].length >= 3) {
+                        cur = zones.push([]) - 1
+                    }
                 }
+                zones[cur].push(field)
+            } else {
+                zones.push([field])
+                cur = -1
             }
-
-            current_zone.push(field)
         })
+        
         return zones
     })
 
