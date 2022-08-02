@@ -5,6 +5,7 @@
     "discord-markdown": "^2.5.1",
     "esbuild": "^0.14.51",
     "esbuild-plugin-import-glob": "^0.1.1",
+    "highlight.js": "^11.6.0",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
     "nunjucks-cli": "^1.0.0",

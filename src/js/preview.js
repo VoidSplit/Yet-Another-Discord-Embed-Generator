@@ -2,6 +2,9 @@ import template from './templates/preview.njk'
 import nunjucks from 'nunjucks'
 import * as markdown from 'discord-markdown'
 
+import { HighlightJS } from 'highlight.js'
+import './hljs.css'
+
 export function preview(embed) {
     const env = nunjucks.configure({
         autoescape: false,
@@ -30,4 +33,6 @@ export function preview(embed) {
     })
 
     document.getElementById("preview").innerHTML = env.renderString(template, embed)
+
+    HighlightJS.highlightAll()
 }
