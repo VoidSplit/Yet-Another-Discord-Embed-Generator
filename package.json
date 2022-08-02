@@ -14,6 +14,7 @@
     "css": "sass --style compressed src/css/index.scss site/dist/css/style.css",
     "resources": "cpy --cwd src resources/ ../site/",
     "js": "node esbuild.js",
-    "build": "npm-run-all --parallel html css resources js"
+    "build": "npm-run-all --parallel html css resources js",
+    "watch_css": "sass --watch --style compressed src/css/index.scss site/dist/css/style.css",
   }
 }
