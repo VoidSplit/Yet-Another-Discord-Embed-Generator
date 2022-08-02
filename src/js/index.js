@@ -11,7 +11,7 @@ Object.keys(exp.getSyntaxes()).forEach((e) => {
 select.populate(options)
 
 document.querySelectorAll("#embed_form input").forEach((element) => {
-    element.addEventListener("keyup", (event) => {
+    element.addEventListener("input", (event) => {
         const embed = form.getEmbed()
         preview.preview(embed)
     })
