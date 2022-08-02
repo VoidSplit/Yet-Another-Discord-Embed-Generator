@@ -2,7 +2,7 @@ import * as form from '../form.js'
 import * as preview from '../preview.js'
 
 export function updateEvents() {
-    document.querySelectorAll("#embed_form input").forEach((element) => {
+    document.getElementById("embed_form").querySelectorAll("input, textarea").forEach((element) => {
         element.addEventListener("input", (event) => {
             const embed = form.getEmbed()
             preview.preview(embed)
