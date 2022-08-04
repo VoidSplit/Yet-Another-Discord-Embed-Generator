@@ -5,7 +5,7 @@
 {% if type == 'text' %}<div class="input_wrapper">{% endif %}
     <input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if maxlength %}data-maxlength="{{ maxlength }}"{% endif %}>
     {% if type == 'text' %}
-    <span id="input_{{ id }}_char_limit" class="char_limit">-85</span>
+    <span id="input_{{ id }}_char_limit" class="char_limit"></span>
     {% endif %}
 {% if type == 'text' %}</div>{% endif %}
 {% endmacro %}
@@ -17,7 +17,7 @@
 {% if type == 'text' %}<div class="input_wrapper">{% endif %}
     <textarea id="input_{{ id }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}></textarea>
     {% if type == 'text' %}
-    <span id="input_{{ id }}_char_limit" class="char_limit">-85</span>
+    <span id="input_{{ id }}_char_limit" class="char_limit"></span>
     {% endif %}
 {% if type == 'text' %}</div>{% endif %}
 {% endmacro %}

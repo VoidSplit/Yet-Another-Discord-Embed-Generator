@@ -1,3 +1,5 @@
+import nunjucks from 'nunjucks'
+
 import * as preview from './preview.js'
 
 import { Embed } from './data/embed.js'
@@ -8,6 +10,8 @@ import { Provider } from './data/provider.js'
 import { Thumbnail } from './data/thumbnail.js'
 import { Video } from './data/video.js'
 import { Field } from './data/field.js'
+
+import formTemplateFuns from '../html/include/form.njk'
 
 export class EmbedForm {
     constructor(selector) {
@@ -31,17 +35,18 @@ export class EmbedForm {
             div.id = "input_fields"
             div.class = "field_line"
             
-            div.innerHTML = `
+            div.innerHTML = nunjucks.renderString(formTemplateFuns + `
                 <div class="field_line" id="input_fields">
-                    <input type="text" placeholder="name" id="input_name" maxlength="256">
-                    <input type="text" placeholder="value" id="input_value" maxlength="1024">
+                {{ input("text", "name", null, "name", 256) }}
+                {{ input("text", "value", null, "value", 1024) }}
                     <div class="checkbox">
                         <input type="checkbox" name="" id="input_inline">
                         <label>Inline</label>
                     </div>
                     <button class="btn red" onclick="this.parentNode.parentNode.remove()">Delete</button>
                 </div>
-            `
+            `)
+
             fields_element.appendChild(div)
         }
     }
