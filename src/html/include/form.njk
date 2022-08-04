@@ -2,12 +2,12 @@
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<div class="input_wrapper">
+{% if type == 'text' %}<div class="input_wrapper">{% endif %}
     <input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if maxlength %}data-maxlength="{{ maxlength }}"{% endif %}>
     {% if type == 'text' %}
     <span id="char_limit_{{ id }}" class="char_limit">-85</span>
     {% endif %}
-</div>
+{% if type == 'text' %}</div>{% endif %}
 {% endmacro %}
 
 {% macro textarea(id, label, placeholder) %}
