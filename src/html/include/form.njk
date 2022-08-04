@@ -14,12 +14,10 @@
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-{% if type == 'text' %}<div class="input_wrapper">{% endif %}
+<div class="input_wrapper">
     <textarea id="input_{{ id }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}></textarea>
-    {% if type == 'text' %}
     <span id="input_{{ id }}_char_limit" class="char_limit"></span>
-    {% endif %}
-{% if type == 'text' %}</div>{% endif %}
+</div>
 {% endmacro %}
 
 {% set sep = '<div class="separator"></div>' | safe %}
