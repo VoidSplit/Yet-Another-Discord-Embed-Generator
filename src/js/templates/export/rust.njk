@@ -11,7 +11,7 @@ lib: serenity
     {% endif %}
 
     {%- if description %}
-    .description("{{ description }}")
+    .description("{{ description | nl2n }}")
     {% endif %}
 
     {%- if image.url %}

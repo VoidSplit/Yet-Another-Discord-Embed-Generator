@@ -22,7 +22,7 @@ embed = discord.Embed(
             { name: "colour", value: color },
             { name: "title", value: title },
             { name: "url", value: url },
-            { name: "description", value: description }
+            { name: "description", value: description | nl2n }
         ], ", \n    "
     ) }}
 )

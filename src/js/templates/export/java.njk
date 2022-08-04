@@ -11,7 +11,7 @@ EmbedBuilder embed = new EmbedBuilder()
     {% endif %}
 
     {%- if description %}
-    .setDescription("{{ description }}")
+    .setDescription("{{ description | nl2n }}")
     {% endif %}
 
     {%- if author.name or author.icon_url %}
