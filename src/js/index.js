@@ -1,3 +1,6 @@
+import { HighlightJS } from 'highlight.js'
+import './hljs.css'
+
 import * as exp from './export.js'
 
 import { EmbedForm } from './embedForm.js'
@@ -12,5 +15,10 @@ window.exp = () => {
     const embed = embedForm.getEmbed()
     const syntax = langSelect.get()
     const code = exp.export_(syntax, embed)
-    document.getElementById("out").innerText = code
+    const out = document.querySelector("#out")
+
+    out.textContent = code
+    out.classList = ["hljs", `language-${syntax}`]
+    
+    HighlightJS.highlightAll()
 }
