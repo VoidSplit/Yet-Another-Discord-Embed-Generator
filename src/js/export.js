@@ -14,8 +14,10 @@ export function getSyntaxes() {
         const id = filenames[i].match(/\.\/templates\/export\/(.*)\.njk/)[1]
         const file = fm(contents[i].default)
 
-        syntax.lang = file.attributes.lang
-        syntax.lib = file.attributes.lib
+        Object.entries(file.attributes).forEach(([k ,v]) => {
+            syntax[k] = v
+        })
+
         syntax.template = file.body
 
         syntaxes[id] = syntax
