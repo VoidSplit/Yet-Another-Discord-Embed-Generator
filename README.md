@@ -12,6 +12,7 @@ npm run build
 ```
 
 ## Features
+
 Create a full embed with color fields and images
 
 Use variables
@@ -19,6 +20,7 @@ Use variables
 Export to different programming languages
 
 ## Languages available
+
 - Python
 - Java
 - JavaScript
