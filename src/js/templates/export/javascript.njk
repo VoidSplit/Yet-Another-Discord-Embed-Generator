@@ -3,12 +3,6 @@ lang: JavaScript
 lib: discord.js
 ---
 
-{%- macro fun(func, parameter) -%}
-{%- if parameter %}
-    {{ func }}({{ parameter }})
-{% endif %}
-{%- endmacro -%}
-
 {%- macro dict(params, del=", ") -%}
     {%- set params = params | selectattr("value") -%}
     { {% for param in params -%}
@@ -17,52 +11,41 @@ lib: discord.js
 {%- endmacro -%}
 
 const embed = new EmbedBuilder()
-{% filter section %}
-
-    {%- if color %}
+    {% if color %}
     .setColor("{{ color }}")
     {% endif %}
-
-    {%- if title %}
+    {% if title %}
     .setTitle("{{ title }}")
     {% endif %}
-    
-    {%- if url %}
+    {% if url %}
     .setURL("{{ url }}")
     {% endif %}
-
-    {%- if author.name or author.icon_url %}
+    {% if author.name or author.icon_url %}
     .setAuthor({{ dict([
         { name: "name", value: author.name },
         { name: "iconURL", value: author.icon_url },
         { name: "url", value: author.url }
     ]) }})
     {% endif %}
-
-    {%- if description %}
+    {% if description %}
     .setDescription("{{ description | nl2n }}")
     {% endif %}
-
-    {%- if thumbnail.url %}
+    {% if thumbnail.url %}
     .setThumbnail("{{ thumbnail.url }}")
     {% endif %}
-
-    {%- if image.url %}
+    {% if image.url %}
     .setImage("{{ image.url }}")
     {% endif %}
-
-    {%- if footer.text or footer.icon_url %}
+    {% if footer.text or footer.icon_url %}
     .setFooter({{ dict([
         { name: "text", value: footer.text },
         { name: "iconURL", value: footer.icon_url }
     ]) }})
     {% endif %}
-
-    {%- if timestamp %}
+    {% if timestamp %}
     .setTimestamp({% if timestamp != '__AUTO__' %}"{{ timestamp }}"{% endif %})
     {% endif %}
-
-    {%- if fields | length %}
+    {% if fields | length %}
     .addFields(
         {% for field in fields %}
             {{ dict([
@@ -73,5 +56,3 @@ const embed = new EmbedBuilder()
         {% endfor %}
     )
     {% endif %}
-
-{% endfilter %}
