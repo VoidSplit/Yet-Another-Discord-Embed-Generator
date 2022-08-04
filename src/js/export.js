@@ -1,4 +1,5 @@
 import nunjucks from 'nunjucks'
+import fm from 'front-matter'
 
 const templates = require('./templates/export/*.njk')
 
@@ -8,8 +9,16 @@ export function getSyntaxes() {
     let syntaxes = {}
 
     for (let i = 0; i < contents.length; i++) {
-        const lang = filenames[i].match(/\.\/templates\/export\/(.*)\.njk/)[1]
-        syntaxes[lang] = contents[i].default
+        let syntax = {}
+
+        const id = filenames[i].match(/\.\/templates\/export\/(.*)\.njk/)[1]
+        const file = fm(contents[i].default)
+
+        syntax.lang = file.attributes.lang
+        syntax.lib = file.attributes.lib
+        syntax.template = file.body
+
+        syntaxes[id] = syntax
     }
 
     return syntaxes

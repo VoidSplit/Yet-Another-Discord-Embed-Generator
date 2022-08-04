@@ -15,10 +15,10 @@ export class LangSelect {
 
         this.sel.empty()
 
-        Object.keys(exp.getSyntaxes()).forEach((e) => {
+        Object.entries(exp.getSyntaxes()).forEach(([k, v]) => {
             let option = document.createElement("option")
-            option.text = e
-            option.value = e
+            option.text = `${v.lang} (${v.lib})`
+            option.value = k
             this.sel.append(option)
         })
     }
