@@ -41,5 +41,5 @@ export function export_(language, embed) {
 
     const syntaxes = getSyntaxes()
 
-    return env.renderString(syntaxes[language], embed)
+    return env.renderString(syntaxes[language].template, embed)
 }
