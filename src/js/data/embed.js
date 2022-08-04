@@ -1,9 +1,9 @@
-import { Author } from './author'
-import { Footer } from './footer'
-import { Image } from './image'
-import { Provider } from './provider'
-import { Thumbnail } from './thumbnail'
-import { Video } from './video'
+import { Author } from './author.js'
+import { Footer } from './footer.js'
+import { Image } from './image.js'
+import { Provider } from './provider.js'
+import { Thumbnail } from './thumbnail.js'
+import { Video } from './video.js'
 
 export class Embed {
     constructor(

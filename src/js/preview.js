@@ -1,9 +1,10 @@
-import template from './templates/preview.njk'
 import nunjucks from 'nunjucks'
 import * as markdown from 'discord-markdown'
 
 import { HighlightJS } from 'highlight.js'
 import './hljs.css'
+
+import template from './templates/preview.njk'
 
 HighlightJS.configure({languages:[]})
 

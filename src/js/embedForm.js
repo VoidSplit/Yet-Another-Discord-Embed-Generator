@@ -1,13 +1,13 @@
 import * as preview from './preview.js'
 
 import { Embed } from './data/embed.js'
-import { Author } from './data/author'
-import { Footer } from './data/footer'
-import { Image } from './data/image'
-import { Provider } from './data/provider'
-import { Thumbnail } from './data/thumbnail'
-import { Video } from './data/video'
-import { Field } from './data/field'
+import { Author } from './data/author.js'
+import { Footer } from './data/footer.js'
+import { Image } from './data/image.js'
+import { Provider } from './data/provider.js'
+import { Thumbnail } from './data/thumbnail.js'
+import { Video } from './data/video.js'
+import { Field } from './data/field.js'
 
 export class EmbedForm {
     constructor(selector) {
@@ -133,5 +133,9 @@ export class EmbedForm {
 
     preview() {
         preview.preview(this.getEmbed())
+    }
+
+    export() {
+        
     }
 }

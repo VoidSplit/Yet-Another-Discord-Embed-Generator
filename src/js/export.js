@@ -1,4 +1,5 @@
 import nunjucks from 'nunjucks'
+
 const templates = require('./templates/export/*.njk')
 
 export function getSyntaxes() {
