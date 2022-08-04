@@ -31,10 +31,8 @@ export function export_(language, embed) {
         lstripBlocks: true,
     })
 
-    env.addFilter("section", (e) => { return e })
-
     env.addFilter("nl2n", (text) => {
-        return text.replace("\n", "\\n")
+        return text ? text.replace("\n", "\\n") : ""
     })
 
     env.addFilter("join_array", (arr, del1, del2) => {

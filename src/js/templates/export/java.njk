@@ -4,40 +4,29 @@ lib: javacord
 ---
 
 EmbedBuilder embed = new EmbedBuilder()
-{% filter section %}
-
-    {%- if title %}
+    {% if title %}
     .setTitle("{{ title }}")
     {% endif %}
-
-    {%- if description %}
+    {% if description %}
     .setDescription("{{ description | nl2n }}")
     {% endif %}
-
-    {%- if author.name or author.icon_url %}
+    {% if author.name or author.icon_url %}
     .setAuthor("{{ author.name }}", "{{ author.url }}", "{{ author.icon_url }}")
     {% endif %}
-
-    {%- if color %}
+    {% if color %}
     .setColor("{{ color }}")
     {% endif %}
-
-    {%- if footer.text or footer.icon_url %}
+    {% if footer.text or footer.icon_url %}
     .setFooter("{{ footer.text }}", "{{ footer.icon_url }}")
     {% endif %}
-
-    {%- if image.url %}
+    {% if image.url %}
     .setImage("{{ image.url }}")
     {% endif %}
-
-    {%- if thumbnail.url %}
+    {% if thumbnail.url %}
     .setThumbnail("{{ thumbnail.url }}")
     {% endif %}
-
-    {%- for field in fields %}
-    {%- if field.name or field.value %}
+    {% for field in fields %}
+    {% if field.name or field.value %}
     .add{{ 'Inline' if field.inline }}Field("{{ field.name }}", "{{ field.value }}")
     {% endif %}
     {% endfor %}
-
-{% endfilter %}

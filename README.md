@@ -13,11 +13,9 @@ npm run build
 
 ## Features
 
-Create a full embed with color fields and images
-
-Use variables
-
-Export to different programming languages
+- Create a full embed with color, fields and images
+- Use variables
+- Export to various programming languages
 
 ## Languages available
 
