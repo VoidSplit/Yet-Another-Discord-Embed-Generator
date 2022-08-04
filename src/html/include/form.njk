@@ -2,14 +2,20 @@
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if maxlength %}maxlength="{{ maxlength }}"{% endif %} >
+<div class="input_wrapper">
+    <input id="input_{{ id }}" type="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} {% if maxlength %}maxlength="{{ maxlength }}"{% endif %} >
+    <span id="char_limit_{{ id }}" class="char_limit">-85</span>
+</div>
 {% endmacro %}
 
 {% macro textarea(id, label, placeholder) %}
 {% if label %}
 <label for="input_{{ id }}">{{ label }}</label>
 {% endif %}
-<textarea id="input_{{ id }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}></textarea>
+<div class="input_wrapper">
+    <textarea id="input_{{ id }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}></textarea>
+    <span id="char_limit_{{ id }}" class="char_limit">-85</span>
+</div>
 {% endmacro %}
 
 {% set sep = '<div class="separator"></div>' | safe %}

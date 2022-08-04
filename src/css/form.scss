@@ -22,6 +22,27 @@ form {
     textarea {
         resize: vertical; 
     }
+    .input_wrapper {
+        position: relative;
+        align-items: center;
+        display: flex;
+        margin-bottom: 18px;
+        margin-top: 5px;
+        border-radius: 3px;
+        overflow: hidden;
+        .char_limit {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 13px;
+            color: #e35f51;
+            background-color: #202225;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     input,textarea {
         font-size: 13px;
         position: relative;
@@ -32,8 +53,7 @@ form {
         background-color: #202225;
         border: none;
         color: #fff;
-        margin-bottom: 18px;
-        margin-top: 5px;
+        min-height: 1rem;
 
         :placeholder {
             color: rgb(182, 182, 182);
