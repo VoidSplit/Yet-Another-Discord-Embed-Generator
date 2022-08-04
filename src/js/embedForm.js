@@ -24,6 +24,17 @@ export class EmbedForm {
         this.element.querySelector("#form_add_field").addEventListener("click", (event) => {
             this.addField()
         })
+
+        this.element.querySelectorAll("input[type='text'][data-maxlength]").forEach((e) => {
+            e.addEventListener("input", (event) => {
+                const chars = e.value.length
+                const maxlength = e.getAttribute("data-maxlength")*1
+                if (chars > maxlength) {
+                    console.log(`${e.id}_extra_chars`)
+                    this.element.querySelector(`#${e.id}_extra_chars`).innerText = `${maxlength - chars}`
+                }
+            })
+        })
     }
 
     addField() {
