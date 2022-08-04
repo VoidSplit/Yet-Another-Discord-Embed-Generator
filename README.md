@@ -21,10 +21,10 @@ Export to different programming languages
 
 ## Languages available
 
-- Python
-- Java
-- JavaScript
-- Rust
+- Python (discord.py)
+- Java (javacord)
+- JavaScript (discord.js)
+- Rust (serenity)
 
 ## Contributors
 
