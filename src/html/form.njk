@@ -3,7 +3,7 @@
 <form id="embed_form" onsubmit="return false" autocomplete="off">
     <h1>Setup your custom embed.</h1>
     <p>Customize your embed from A to Z and export it in the language you want!</p>
-    <div id="tooltip">You can use Discord markdown, and use custom variables using this: <strong>{% raw %}{#myVariableName}{% endraw %}</strong> </div>
+    <div id="tooltip">You can use Discord markdown, and use custom variables using this: <strong>{{ '{#myVariableName}' }}</strong> </div>
     {{ form.input("text", "author_name", "Author name", "Some name", 256) }}
     {{ form.input("text", "author_url", "Author url", "https://my-super-website.com/profile/") }}
     {{ form.input("text", "author_icon_url", "Author icon url", "https://my-super-website.com/profile-picture.png") }}
