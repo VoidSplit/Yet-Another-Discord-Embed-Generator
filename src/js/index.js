@@ -1,26 +1,16 @@
-import './ui/form.js'
-
-import * as form from './form.js'
-import * as preview from './preview.js'
-import * as select from './ui/select.js'
 import * as exp from './export.js'
 
-let options = {}
-Object.keys(exp.getSyntaxes()).forEach((e) => {
-    options[e] = e
-})
-select.populate(options)
+import { EmbedForm } from './embedForm.js'
+import { LangSelect } from './langSelect.js'
 
-document.getElementById("embed_form").addEventListener("input", (event) => {
-    const embed = form.getEmbed()
-    preview.preview(embed)
-})
+const langSelect = new LangSelect("#export_select")
+
+const embedForm = new EmbedForm("#embed_form")
+embedForm.preview()
 
 window.exp = () => {
-    const embed = form.getEmbed()
-    const syntax = select.get()
+    const embed = embedForm.getEmbed()
+    const syntax = langSelect.get()
     const code = exp.export_(syntax, embed)
     document.getElementById("out").innerText = code
 }
-
-preview.preview(form.getEmbed())
