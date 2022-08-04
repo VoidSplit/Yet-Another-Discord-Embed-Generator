@@ -54,7 +54,10 @@ form {
         border: none;
         color: #fff;
         min-height: 1rem;
-
+        &[type="color"] {
+            margin-bottom: 18px;
+            margin-top: 5px;
+        }
         :placeholder {
             color: rgb(182, 182, 182);
         }
