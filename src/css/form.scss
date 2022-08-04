@@ -38,6 +38,7 @@ form {
             color: #e35f51;
             background-color: #202225;
             padding: 8px 10px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -91,7 +92,11 @@ form {
         align-items: center;
         justify-content: flex-start;
 
-        input {
+        .input_wrapper {
+            width: 100%;
+        }
+        input,
+        .input_wrapper {
             margin-bottom: 0;
         }
 
