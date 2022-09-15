@@ -1,10 +1,11 @@
 .embed {
+    position: relative;
     grid-column: 2;
     min-height: 2rem;
     display: flex;
-
     .colored_line {
         width: 4px;
+        min-width: 4px;
         height: 100%;
         border-radius: 4px 0 0 4px;
     }
@@ -17,6 +18,9 @@
         padding: 16px;
         display: grid;
         grid-template-columns: auto auto;
+        max-width: 516px;
+        overflow: hidden;
+        gap: 10px
     }
 }
 
@@ -46,13 +50,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: hidden;
 
     .name_wrapper {
         display: flex;
         align-items: center;
         font-size: 13px;
         font-weight: 600;
-        line-height: 0;
         gap: 8px;
 
         img {
@@ -61,9 +65,15 @@
             border-radius: 50%;
         }
         .name {
-            display: flex;
-            align-items: center;
+            display: block;
+            padding: auto 0;
             height: 24px;
+            font-weight: 800;
+            font-size-adjust: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 484px;
         }
         p:hover {
             text-decoration: underline;
@@ -74,6 +84,10 @@
     .title {
         font-weight: 600;
         font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 484px;
 
         a {
             &:link,
@@ -90,6 +104,9 @@
 
     .description {
         font-size: 13px;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-width: 484px;
     }
     code {
         background-color: rgb(32, 34, 37);
@@ -123,14 +140,17 @@
         &_name {
             font-weight: 700;
             font-size: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 484px;
         }
 
         &_value {
-            text-overflow: ellipsis;
-            overflow: wrap;
-            max-width: 100%;
-            
+            white-space: nowrap;
             overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 484px;
         }
     }
 
@@ -153,19 +173,22 @@
     }
 
     .footer {
+        position: relative;
         display: flex;
         align-items: center;
         font-size: 11.05px;
         color: #72767d;
         gap: 5px;
+        overflow: hidden;
+        max-width: 484px;
 
         .img {
-            background-color: rebeccapurple;
+            display: flex;
             height: 20px;
-            aspect-ratio: 1;
             overflow: hidden;
             border-radius: 50%;
-
+            min-width: 20px;
+            max-width: 20px;
             img {
                 width: 100%;
                 height: 100%;
@@ -174,10 +197,19 @@
         }
 
         .decoration {
+            display: inline;
             background-color: #3b3c42;
             height: 4px;
             aspect-ratio: 1;
             border-radius: 50%;
+        }
+        p {
+            display: inline;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 459px;
+            
         }
     }
 }
