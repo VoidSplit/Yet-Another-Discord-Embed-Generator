@@ -51,7 +51,7 @@ const embed = new EmbedBuilder()
             {{ dict([
                 { name: "name", value: field.name },
                 { name: "value", value: field.value },
-                { name: "inline", value: "true" if footer.inline else "false", no_quotes: true }
+                { name: "inline", value: 'true' if field.inline else 'false', no_quotes: true }
             ]) }}
         {% endfor %}
     )
