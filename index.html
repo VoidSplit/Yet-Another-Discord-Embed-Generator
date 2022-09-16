@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed generator</title>
+
+    <meta itemprop="og:image" content="https://raw.githubusercontent.com/VoidSplit/Yet-Another-Discord-Embed-Generator/gh-pages/resources/images/discord.jpg">
+    <meta itemprop="og:name" content="Discord embed generator">
+
+    <meta property="og:image" content="https://raw.githubusercontent.com/VoidSplit/Yet-Another-Discord-Embed-Generator/gh-pages/resources/images/discord.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Design your discord embeds with markdown and variables and generate the code in Java JavaScript Python or Rust!">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Discord embed generator">
+    <meta property="og:site_name" content="Discord embed generator">
+    <meta property="og:url" content="/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Discord-embed-generator">
+    <meta name="twitter:creator" content="@CVoidsplit">
+    <meta name="twitter:title" content="Discord embed generator">
+    <meta name="twitter:description" content="Design your discord embeds with markdown and variables and generate the code in Java JavaScript Python or Rust!">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/VoidSplit/Yet-Another-Discord-Embed-Generator/gh-pages/resources/images/discord.jpg">
+
+    <link rel="shortcut icon" href="resources/images/avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="dist/js/app.css">
+</head>
+<body>
+
+<div class="preview">
+    <div class="message">
+        <div class="user_profile">
+            <div class="inner">
+                <img src="resources/images/avatar.png" alt="Bot profile picture">
+            </div>
+        </div>
+        <div class="user_infos">
+            <div class="fixed_infos">
+                <div class="user_name">Générateur d'embed</div>
+                <div class="user_tag"><span>bot</span></div>
+            </div>
+            <div class="timestamp_infos">
+                Aujourd'hui à 20:15
+            </div>
+        </div>
+        <div class="embed" id="preview">
+            <div class="colored_line" id="preview_color"></div>
+            <div class="inner"></div>
+        </div>
+    </div>
+</div>
+
+<form id="embed_form" onsubmit="return false" autocomplete="off">
+    <h1>Setup your custom embed.</h1>
+    <p>Customize your embed from A to Z and export it in the language you want!</p>
+    <div id="tooltip">You can use Discord markdown, and use custom variables using this: <strong>{#myVariableName}</strong> </div>
+    <label for="input_author_name">Author name</label>
+<div class="input_wrapper">    <input id="input_author_name" type="text" placeholder="Some name" data-maxlength="256">
+    <span id="input_author_name_extra_chars" class="extra_chars"></span>
+</div>
+    <label for="input_author_url">Author url</label>
+<div class="input_wrapper">    <input id="input_author_url" type="text" placeholder="https://my-super-website.com/profile/" >
+    <span id="input_author_url_extra_chars" class="extra_chars"></span>
+</div>
+    <label for="input_author_icon_url">Author icon url</label>
+<div class="input_wrapper">    <input id="input_author_icon_url" type="text" placeholder="https://my-super-website.com/profile-picture.png" >
+    <span id="input_author_icon_url_extra_chars" class="extra_chars"></span>
+</div>
+
+    <div class="separator"></div>
+
+    <label for="input_color">Color</label>
+    <input id="input_color" type="color"  >
+
+    <label for="input_title">Title</label>
+<div class="input_wrapper">    <input id="input_title" type="text" placeholder="Some title" data-maxlength="256">
+    <span id="input_title_extra_chars" class="extra_chars"></span>
+</div>
+    <label for="input_description">Description</label>
+<div class="input_wrapper">
+    <textarea id="input_description" placeholder="Some description here"></textarea>
+    <span id="input_description_extra_chars" class="extra_chars"></span>
+</div>
+
+    <label for="input_url">Title Url</label>
+<div class="input_wrapper">    <input id="input_url" type="text" placeholder="https://my-super-website.com/" >
+    <span id="input_url_extra_chars" class="extra_chars"></span>
+</div>
+    <label for="input_thumbnail_url">Thumbnail url</label>
+<div class="input_wrapper">    <input id="input_thumbnail_url" type="text" placeholder="https://my-super-website/thumbnail.png" >
+    <span id="input_thumbnail_url_extra_chars" class="extra_chars"></span>
+</div>
+
+    <div class="separator"></div>
+
+    <label>Fields</label>
+    <div id="fields_wrapper"></div>
+    <button class="btn green" id="form_add_field">Add field</button>
+
+    <div class="separator"></div>
+
+    <label for="input_image_url">Image url</label>
+<div class="input_wrapper">    <input id="input_image_url" type="text" placeholder="https://my-super-website/content.jpg" >
+    <span id="input_image_url_extra_chars" class="extra_chars"></span>
+</div>
+
+    <div class="separator"></div>
+
+    <label for="input_footer_icon_url">Footer icon url</label>
+<div class="input_wrapper">    <input id="input_footer_icon_url" type="text" placeholder="https://my-super-website/footer-icon.png" >
+    <span id="input_footer_icon_url_extra_chars" class="extra_chars"></span>
+</div>
+    <label for="input_footer_text">Footer text</label>
+<div class="input_wrapper">    <input id="input_footer_text" type="text" placeholder="Some footer text here" data-maxlength="2048">
+    <span id="input_footer_text_extra_chars" class="extra_chars"></span>
+</div>
+
+    <label for="input_timestamp">Timestamp</label>
+    <div class="timestamp">
+            <input id="input_timestamp" type="date"  >
+
+        <div class="checkbox">
+                <input id="input_timestamp_auto" type="checkbox"  >
+
+            <label>Auto</label>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="export">
+        <label>Export</label>
+        <div class="export_inline">
+            <select id="export_select" style="display: none;"></select>
+            <button class="btn green" onclick="exp()">Export</button>
+        </div>
+        <pre>
+            <code id="out"></code>
+        </pre>
+    </div>
+</form>
+    <script src="dist/js/app.js"></script>
+</body>
+</html>
